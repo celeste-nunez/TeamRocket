@@ -1,0 +1,9 @@
+What we need and what we're doing
+
+HTML
+CSS 
+React (instead of Java)
+
+Backend database - SQLite
+environment - firebase (also handling logins)
+
