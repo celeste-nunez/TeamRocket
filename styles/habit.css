@@ -1,3 +1,4 @@
+/* fixed position for footer */
 footer
 {
     display: flex;
@@ -9,6 +10,7 @@ footer
     left: 0;
     width: 100%;
 }
+/* the logo in footer */
 .nav-head
 {
     display: flex;
@@ -16,12 +18,13 @@ footer
     font-weight: bolder;
     color: #4A90E2;
 }
+/* establishing horizontal view and nest for nav options */
 .nav-menu
 {
     display: flex;
     margin-right: 1em;
 }
-
+/* pretty nav buttonr */
 .nav-opt {
     margin: 8px;
     background-color: #4A90E2;    
@@ -39,11 +42,10 @@ footer
 .nav-opt:hover {
     background-color: #357ABD;    
     transform: translateY(-3px);  
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Deeper shadow */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); 
 }
-
 /* Active (when clicked) effect */
 .nav-opt:active {
-    transform: translateY(0);     /* Returns to normal position */
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);  /* Smaller shadow */
+    transform: translateY(0);     
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);  
 }
