@@ -1,0 +1,49 @@
+footer
+{
+    display: flex;
+    justify-content: space-between;
+    background-color: aliceblue;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.nav-head
+{
+    display: flex;
+    margin: 1em;
+    font-weight: bolder;
+    color: #4A90E2;
+}
+.nav-menu
+{
+    display: flex;
+    margin-right: 1em;
+}
+
+.nav-opt {
+    margin: 8px;
+    background-color: #4A90E2;    
+    color: white;                 
+    border: none;                 
+    padding: 12px 24px;           
+    font-size: 16px;              
+    font-weight: bold;            
+    border-radius: 25px;          
+    cursor: pointer;              
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease;    
+}
+/* Hover effect */
+.nav-opt:hover {
+    background-color: #357ABD;    
+    transform: translateY(-3px);  
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Deeper shadow */
+}
+
+/* Active (when clicked) effect */
+.nav-opt:active {
+    transform: translateY(0);     /* Returns to normal position */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);  /* Smaller shadow */
+}
