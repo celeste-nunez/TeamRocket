@@ -1,11 +1,11 @@
 :root 
 {
     /* change the values below to your colors from your palette */
-    --primary-color: #BB999C ;
-    --secondary-color: #9999C3 ;
-    --accent-color1: #C0E6DE;
-    --accent-color2: #7B8CDE;
-    --accent-color3: #E88D67;
+    --primary-color: #4B6A34;
+    --secondary-color: #97C953;
+    --accent-color1: #739E4B;
+    --accent-color2: #C3DF46;
+    --accent-color3: #474430; 
     --text-dark: black;
     --text-light: white;
     --primary-font: "Comfortaa";
@@ -48,11 +48,11 @@
 .hero-txt 
 {
     z-index: 2;
-    background-color: #c5ccee;
+    background-color: var(--secondary-color); /* main box*/
     text-align: center;
     border: 8px solid;
     border-radius: 0.7em; 
-    border-color: var(--accent-color2);
+    border-color: var(--accent-color3);
     position: relative;
     left: -3em;
 }
@@ -69,7 +69,7 @@
     text-decoration: underline wavy var(--accent-color2);
     text-decoration-thickness: 8px;
     text-underline-offset: 0.2em;
-    -webkit-text-stroke: 1px black;
+    -webkit-text-stroke: 0.5px white;
     margin: 0.5em;
 }
 /* "shouldn't wait for new year" styling */
@@ -80,10 +80,114 @@
     font-size: 2rem;
     margin: 1em 2em;
     color: var(--accent-color3);
-    -webkit-text-stroke: 1px black;
+    /* -webkit-text-stroke: 1px; */
 }
 /* login button styling (also grouped in w/ nav-opt button syling*/
 .hero-button
 {
     margin-bottom: 1em; 
+    
 }
+
+
+footer {
+    display:flex;
+    justify-content: space-between;
+    background-color: var(--secondary-color); /* main color*/
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+ 
+/* the logo in footer */
+.nav-head {
+    display: flex;
+    margin: 0.5em;
+    font-weight: bolder;
+    font-size: 3rem;
+    color: var(--accent-color3); /* logo color*/
+    font-family: 'Chicle', cursive;
+    letter-spacing: 0.1em;
+    /* -webkit-text-stroke: 0.1px white; */
+}
+ 
+/* establishing horizontal view and nest for nav options */
+.nav-menu {
+    display: flex;
+    margin-right: 1em;
+}
+ 
+/* pretty nav buttons */
+.nav-opt {
+    margin: 0.2em;
+    background-color: var(--accent-color1);
+    color: white;
+    border: none;
+    /* padding: 0.7em 1.2em; */
+    padding: 1em 1.8em;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    -webkit-text-stroke: var(--text-dark);
+
+}
+ 
+/* Hover effect */
+.nav-opt:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+
+}
+ 
+/* Active (when clicked) effect */
+.nav-opt:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+/* For small screens (mobile) */
+@media screen and (max-width: 600px) {
+    footer {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center;
+        padding: 1em 0;
+    }
+    
+    .nav-menu {
+        align-items: center;
+    }
+
+    .nav-opt {
+        width: 90%; /* Make buttons full-width */
+        padding: 1em;
+        font-size: 18px;
+    }
+
+    .nav-head {
+        font-size: 2rem; /* Reduce logo size */
+    }
+}
+
+/* For medium screens (tablets) */
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    .hero {
+        align-items: center;
+    }
+
+    .hero-img img {
+        height: 20em; /* Reduce image size */
+    }
+
+    .hero-txt {
+        left: 0; /* Remove offset for better centering */
+        width: 80%;
+    }
+}
+
