@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <NavBar/>
-      <h3>Hi, I'm Paul!</h3>
+      
       <Check_habit/>
     </>
   );
