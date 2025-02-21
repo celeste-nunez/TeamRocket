@@ -1,0 +1,34 @@
+form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    border: 2px solid black;
+    border-radius: 6px;
+    width:100%;
+
+}
+.checkbox-description{
+    width:80%;
+    padding-left: 2rem;
+        
+}
+.habit-interval{
+
+    padding-left: 2rem;
+}
+.check-habit{
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+    align-content: center;
+    padding:4%;
+}
+.check-habit input{
+    width: 3rem; 
+    height: 3rem;
+    background-color: #007bff;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
