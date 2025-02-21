@@ -1,14 +1,13 @@
 import './App.css';
-import Check_habit from './Check_habit'
+// import Check_habit from './Check_habit'
 import NavBar from './Components/NavBar'
-
+import Habitling from './Habitling'
 function App() {
 
   return (
     <>
       <NavBar/>
-      
-      <Check_habit/>
+      <Habitling/>
     </>
   );
 };
