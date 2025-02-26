@@ -1,11 +1,15 @@
 import './App.css'
-import NavBar from './Components/NavBar'
+import MyButton from './Components/MyButton';
+import NavBar from './Components/NavBar';
 
 function App() {
-
   return (
-    <NavBar/>
+    <>
+      <MyButton text="Please Work" action={console.log("pressed")} />
+      <NavBar />
+    </>
   );
-};
+
+}
 
 export default App

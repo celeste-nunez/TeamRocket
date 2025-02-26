@@ -3,6 +3,16 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  --primary-color: #BB999C;
+  --secondary-color: #9999C3;
+  --accent-color1: #C0E6DE;
+  --accent-color2: #7B8CDE;
+  --accent-color3: #E88D67;
+  --text-dark: black;
+  --text-light: white;
+  --primary-font: "Comfortaa";
+  --secondary-font: "Fredoka", "Poppins";
+  --paragraph-font: "Tinos", Helvetica, sans-serif;
 }
 
 .logo {
@@ -44,37 +54,8 @@
   color: #888;
 }
 
-footer {
-  display: flex;
-  justify-content: space-between;
-  background-color: #f7c4ae;
-  align-items: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-
-/* the logo in footer */
-.nav-head {
-  display: flex;
-  margin: 0.5em;
-  font-weight: bolder;
-  font-size: 3rem;
-  color: var(--accent-color3);
-  font-family: 'Chicle', cursive;
-  letter-spacing: 0.1em;
-  -webkit-text-stroke: 0.1px black;
-}
-
-/* establishing horizontal view and nest for nav options */
-.nav-menu {
-  display: flex;
-  margin-right: 1em;
-}
-
 /* pretty nav buttonr */
-.nav-opt {
+button {
   margin: 0.2em;
   background-color: var(--accent-color3);
   color: var(--text-light);
@@ -89,14 +70,15 @@ footer {
 }
 
 /* Hover effect */
-.nav-opt:hover {
-  background-color: #6577cc;
+button:hover {
+  background-color: var(--accent-color2);
   transform: translateY(-3px);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+
 }
 
 /* Active (when clicked) effect */
-.nav-opt:active {
+button:active {
   transform: translateY(0);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }

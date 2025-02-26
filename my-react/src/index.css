@@ -13,14 +13,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
 
 body {
   margin: 0;
@@ -46,9 +40,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -59,10 +55,69 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f7c4ae;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* the logo in footer */
+.nav-head {
+  display: flex;
+  margin: 0.5em;
+  font-weight: bolder;
+  font-size: 3rem;
+  color: var(--accent-color3);
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.1em;
+  -webkit-text-stroke: 0.1px black;
+}
+
+/* establishing horizontal view and nest for nav options */
+.nav-menu {
+  display: flex;
+  margin-right: 1em;
+}
+
+/* pretty nav buttonr */
+.nav-opt {
+  margin: 0.2em;
+  background-color: var(--accent-color3);
+  color: var(--text-light);
+  border: none;
+  padding: 0.7em 1.2em;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.nav-opt:hover {
+  background-color: #6577cc;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Active (when clicked) effect */
+.nav-opt:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }

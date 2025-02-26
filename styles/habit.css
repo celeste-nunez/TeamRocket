@@ -1,25 +1,24 @@
-:root 
-{
+:root {
     /* change the values below to your colors from your palette */
-    --primary-color: #BB999C ;
-    --secondary-color: #9999C3 ;
+    --primary-color: #BB999C;
+    --secondary-color: #9999C3;
     --accent-color1: #C0E6DE;
     --accent-color2: #7B8CDE;
     --accent-color3: #E88D67;
     --text-dark: black;
     --text-light: white;
     --primary-font: "Comfortaa";
-    --secondary-font: "Fredoka", "Poppins"; 
-    --paragraph-font: "Tinos", Helvetica, sans-serif; 
+    --secondary-font: "Fredoka", "Poppins";
+    --paragraph-font: "Tinos", Helvetica, sans-serif;
     /* these colors below should be chosen from among your palette colors above */
-    --headline-color-on-white: var(
-      --primary-color
-    ); /* headlines on a white background */
-    --headline-color-on-color: white; /* headlines on a colored background */
-    --paragraph-color-on-white: var(
-      --primary-color
-    ); /* paragraph text on a white background */
-    --paragraph-color-on-color: white; /* paragraph text on a colored background */
+    --headline-color-on-white: var(--primary-color);
+    /* headlines on a white background */
+    --headline-color-on-color: white;
+    /* headlines on a colored background */
+    --paragraph-color-on-white: var(--primary-color);
+    /* paragraph text on a white background */
+    --paragraph-color-on-color: white;
+    /* paragraph text on a colored background */
     --paragraph-background-color: var(--primary-color);
     --nav-link-color: var(--primary-color);
     --nav-background-color: var(--secondary-color);
@@ -29,36 +28,35 @@
 
 
 /* establishing horizontal view in hero  */
-.hero
-{
+.hero {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 5em;
     position: relative;
 }
+
 /* styling hero image */
-.hero-img img
-{
+.hero-img img {
     height: 25em;
     z-index: 1;
-    border-radius: 0.5em;
+    border-radius: 8;
 }
+
 /* creating text-box for hero */
-.hero-txt 
-{
+.hero-txt {
     z-index: 2;
     background-color: #c5ccee;
     text-align: center;
     border: 8px solid;
-    border-radius: 0.7em; 
+    border-radius: 0.7em;
     border-color: var(--accent-color2);
     position: relative;
     left: -3em;
 }
+
 /* "new you" styling */
-.hero-title
-{
+.hero-title {
     font-family: 'Chicle', cursive;
     color: var(--accent-color3);
     letter-spacing: 0.1em;
@@ -72,9 +70,9 @@
     -webkit-text-stroke: 1px black;
     margin: 0.5em;
 }
+
 /* "shouldn't wait for new year" styling */
-.hero-subtext
-{
+.hero-subtext {
     font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
     font-size: 2rem;
@@ -82,8 +80,65 @@
     color: var(--accent-color3);
     -webkit-text-stroke: 1px black;
 }
+
 /* login button styling (also grouped in w/ nav-opt button syling*/
-.hero-button
-{
-    margin-bottom: 1em; 
+.hero-button {
+    margin-bottom: 1em;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f7c4ae;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* the logo in footer */
+.nav-head {
+    display: flex;
+    margin: 0.5em;
+    font-weight: bolder;
+    font-size: 3rem;
+    color: var(--accent-color3);
+    font-family: 'Chicle', cursive;
+    letter-spacing: 0.1em;
+    -webkit-text-stroke: 0.1px black;
+}
+
+/* establishing horizontal view and nest for nav options */
+.nav-menu {
+    display: flex;
+    margin-right: 1em;
+}
+
+/* pretty nav buttonr */
+.nav-opt {
+    margin: 0.2em;
+    background-color: var(--accent-color3);
+    color: var(--text-light);
+    border: none;
+    padding: 0.7em 1.2em;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.nav-opt:hover {
+    background-color: #6577cc;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Active (when clicked) effect */
+.nav-opt:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
