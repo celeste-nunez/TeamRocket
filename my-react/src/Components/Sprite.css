@@ -1,0 +1,46 @@
+:root {
+    --pixel-size: 1; /* Adjust this value for scaling */
+    /* --row: 16; */
+    /* --column: 1; */
+    --frames:4
+}
+  
+body {
+    background: white;
+}
+  
+.sprite {
+    overflow: hidden;
+    position: relative;
+    /* margin: 4em auto; */
+}
+
+.sprite-sheet {
+    animation: moveSpritesheet 1s steps(var(--frames)) infinite; /* Change to 4 steps */
+    width: calc(256px * var(--pixel-size));
+    height: calc(480px * var(--pixel-size));
+    position:absolute;
+}
+.sprite-shadow{
+    position:absolute;
+    
+}
+.pixelart {
+    image-rendering: pixelated;
+ }
+.face-right{
+    top:calc
+}
+.size{
+    width: calc(16px * var(--pixel-size));
+    height: calc(16px * var(--pixel-size));
+}
+
+@keyframes moveSpritesheet {
+    from {
+        transform: translate3d(0px, 0, 0)
+    }
+    to {
+        transform: translate3d(-100%, 0, 0)
+    }
+}

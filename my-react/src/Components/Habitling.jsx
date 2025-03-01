@@ -1,7 +1,7 @@
-import Check_habit from "./Check_habit";
-import "./Habitling.css";
 
-import petImg from "./assets/react.svg"; 
+import "./Habitling.css";
+import Sprite from './Spritestuff';
+import petImg from "../assets/react.svg"; 
 
 function Habitling({ name, description, streak, bestStreak, petImage }) {
     return (
@@ -12,7 +12,15 @@ function Habitling({ name, description, streak, bestStreak, petImage }) {
             </div>
 
             {/* Description */}
-            <Check_habit/>
+            <form action="/submit form">
+                <div class="checkbox-description">
+                    <h2 class="habit-name">Have a good day</h2>
+                    <h3 class="habit-interval">Every other day</h3>
+                </div>
+                <label class="check-habit">
+                    <input type="checkbox"/>
+                </label>
+            </form>
 
             {/* Stats */}
             <div className="habitling-stats-box box">
@@ -22,7 +30,7 @@ function Habitling({ name, description, streak, bestStreak, petImage }) {
 
             {/* Pet Image */}
             <div className="habitling-pet-box box">
-                <img src={petImage || petImg} alt="Habitling Pet" />
+                <Sprite/>
             </div>
        </div> 
     );
