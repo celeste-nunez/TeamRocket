@@ -1,4 +1,4 @@
-.habitling-box {
+.box {
     border: 2px solid black;
     padding: 0px;
     border-radius: 10px;
@@ -9,7 +9,7 @@
     text-align: center;
 }
 
-.habitling-name {
+.name {
     align-items: center;
     justify-content: center;
     border-bottom: 2px solid black;
@@ -20,16 +20,9 @@
     margin: 0 auto;  
 }
 
-.habitling-description {
-    color: #666;
-    margin-top: 8px;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 2px solid black;
-    margin: 0 auto;
-}
 
-.habitling-stats-box {
+
+.stats-box {
     display: flex;
     margin-top: 10px;
     align-items: center;
@@ -38,24 +31,25 @@
     flex-direction: column;
 }
 
-.habitling-stats-streak {
+.streak {
     color: green;
 }
 
-.habitling-stats-best {
+.streak-best {
     color: blue;
 }
 
-.habitling-pet-box img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-top: 10px;
-}
-.habitling-pet-box {
+.pet-box {
     height: 200px;
-
+    position: relative;
 }
+
+.sprite{
+    position: absolute;
+    top:40%;
+    left: 40%;
+}
+
 
 
 

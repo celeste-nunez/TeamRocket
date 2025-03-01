@@ -1,14 +1,14 @@
 
 import "./Habitling.css";
-import Sprite from './Spritestuff';
-import petImg from "../assets/react.svg"; 
+import Sprite from './SpriteAnimation';
+ 
 
 function Habitling({ name, description, streak, bestStreak, petImage }) {
     return (
-       <div className="habitling-box">
+       <div className="box">
             {/* Name */}
-            <div className="habitling-name-box box">
-                <h2 className="habitling-name">{name || "Unnamed Habitling"}</h2>
+            <div className="name-box">
+                <h2 className="name">{name || "Unnamed Habitling"}</h2>
             </div>
 
             {/* Description */}
@@ -23,14 +23,15 @@ function Habitling({ name, description, streak, bestStreak, petImage }) {
             </form>
 
             {/* Stats */}
-            <div className="habitling-stats-box box">
-                <h3 className="habitling-stats-streak">🔥 Streak: {streak || 0} days</h3>
-                <h3 className="habitling-stats-best">🏆 Best: {bestStreak || 0} days</h3>
+            <div className="stats-box">
+                <h3 className="streak">🔥 Streak: {streak || 0} days</h3>
+                <h3 className="streak-best">🏆 Best: {bestStreak || 0} days</h3>
             </div>
 
             {/* Pet Image */}
-            <div className="habitling-pet-box box">
-                <Sprite/>
+            <div className="pet-box">
+                <Sprite className="sprite"/>
+                <img src="../assets/spritesheet 3.png" alt="" />
             </div>
        </div> 
     );
