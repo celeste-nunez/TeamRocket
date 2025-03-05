@@ -8,10 +8,11 @@ Also a dictionary of all the habitlings needs to be added with their frame count
 
 :root {
     --pixel-size: 6; /* Adjust this value for scaling */
-    --row: 18;
-    --column: 3;
-    --frames:4;
+    --row: 9;
+    --column: 0;
+    --frames:8;
     --animation-chunk:-16px*var(--pixel-size); /*this is how far back the image needs to move per sprite frame. -1 because the sprite sheet it's self is moving backward revealing more sprites * 16px per sprite*how big we made it*/
+    --time: 1s;
     --animation-start:calc(var(--column)*4*var(--animation-chunk)); /*where to start is the column*number of sprite in a column(4)* how big those sprites are*/
 }
   
@@ -22,12 +23,11 @@ body {
 .sprite {
     overflow:hidden;
     position: relative;
-    /* margin: 4em auto; */
-    
+    z-index:0;
 }
 
 .sprite-sheet {
-    animation: moveSpritesheet 1s steps(var(--frames)) infinite; /* Change to 4 steps */
+    animation: moveSpritesheet var(--time) steps(var(--frames)) infinite; /* Change to 4 steps */
     width: calc(256px * var(--pixel-size));
     height: calc(480px * var(--pixel-size));
     

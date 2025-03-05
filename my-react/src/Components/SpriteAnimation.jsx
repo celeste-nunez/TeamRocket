@@ -1,5 +1,5 @@
 import './SpriteAnimation.css'
-import SpriteSheet from '../assets/spritesheet_3.png';
+import SpriteSheet from '../assets/spritesheet_5.png';
 // import Shadow from "https://s3-us-west-2.amazonaws.com/s.cdpn.io/21542/DemoRpgCharacterShadow.png";
 function AnimateSprite(){
 
