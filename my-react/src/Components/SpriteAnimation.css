@@ -1,0 +1,65 @@
+/* to do: 
+Dynamic functionality with react useStates needs be applied so that say the snake slithers 
+away and becomes smaller as her does. also the pets should move around their box.
+Also the background gradient needs to be added. 
+Also a dictionary of all the habitlings needs to be added with their frame count, location, and time
+(1s or 2s with 8 framers. Problem is is that can't be passed in as a calc because it has to be a string literal I think*/
+
+
+:root {
+    --pixel-size: 6; /* Adjust this value for scaling */
+    --row: 9;
+    --column: 0;
+    --frames:8;
+    --animation-chunk:-16px*var(--pixel-size); /*this is how far back the image needs to move per sprite frame. -1 because the sprite sheet it's self is moving backward revealing more sprites * 16px per sprite*how big we made it*/
+    --time: 1s;
+    --animation-start:calc(var(--column)*4*var(--animation-chunk)); /*where to start is the column*number of sprite in a column(4)* how big those sprites are*/
+}
+  
+body {
+    background: white;
+}
+  
+.sprite {
+    overflow:hidden;
+    position: relative;
+    z-index:0;
+}
+
+.sprite-sheet {
+    animation: moveSpritesheet var(--time) steps(var(--frames)) infinite; /* Change to 4 steps */
+    width: calc(256px * var(--pixel-size));
+    height: calc(480px * var(--pixel-size));
+    
+    
+}
+/* .sprite-shadow{
+    position:absolute;
+    
+} */
+.pixelart {
+    image-rendering: pixelated;
+    
+ }
+ .down{
+    /* top:calc(var(--row)*var(--pixel-size)); */
+ }
+
+.size{/*no need to change this. I didn't want to keep telling things that they're 16px big so I wrote it here and applied it to everything*/
+    width: calc(16px * var(--pixel-size));
+    height: calc(16px * var(--pixel-size));
+}
+
+@keyframes moveSpritesheet {
+    from {
+        transform: translate3d(var(--animation-start), calc(var(--row)*var(--animation-chunk)), 0);
+    }                                                  /*this is multiplying the row we want by how pig the rows are.
+                                                        it starts here and stays here the whole animation because thats how our sprite sheet works*/
+    to {
+        transform: translate3d(calc(var(--animation-start) + var(--frames)*var(--animation-chunk)), calc(var(--row)*var(--animation-chunk)), 0); 
+                                /*left to right                                                   ,  up and down                            ,forward and back           
+                                calc( where you started plus how far to move back. the animations start pulls the image back say -128px to start half way through the image, and then we add however big the sprite section is to that amount to move the sprite sheet back even further
+                                for the next number we keep it the same because we want to start on say the 3rd row but for th duration of the animation we want to stay on the 3rd row.
+                                the last is forward and back and we can leave that alone for this project*/                                                
+    }           
+} 
