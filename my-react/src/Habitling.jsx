@@ -1,4 +1,5 @@
 import Check_habit from "./Check_habit";
+import HabitCreate from "./Components/HabitCreate";
 import "./Habitling.css";
 
 import petImg from "./assets/react.svg"; 
@@ -9,10 +10,11 @@ function Habitling({ name, description, streak, bestStreak, petImage }) {
             {/* Name */}
             <div className="habitling-name-box box">
                 <h2 className="habitling-name">{name || "Unnamed Habitling"}</h2>
+                <HabitCreate/>
             </div>
 
             {/* Description */}
-            <Check_habit/>
+            
 
             {/* Stats */}
             <div className="habitling-stats-box box">

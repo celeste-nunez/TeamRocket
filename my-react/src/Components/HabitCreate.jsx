@@ -1,105 +1,76 @@
-import React, { useState } from "react";
-import "../App.css"; // Import a CSS file for styling
 
-const HabitCreate = () => {
-  // State to manage habit details
-  const [habitName, setHabitName] = useState("");
-  const [duration, setDuration] = useState("");
-  const [isCompleted, setIsCompleted] = useState(false);
-  const [habits, setHabits] = useState([]); // Stores created habits
-  const [isFormVisible, setIsFormVisible] = useState(false); // Controls form visibility
+import { useState } from "react";
+import "../App.css";
 
-  // Handle form submission
+/*
+  Put title or sprite image at top of page
+ */
+
+export default function HabitCreate({ onSave }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    description: "",
+    startDate: "",
+    endDate: "",
+  });
+
+  const toggleForm = () => setIsOpen(!isOpen);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (!habitName || !duration) return; // Prevent empty submissions
-
-    const newHabit = { name: habitName, duration, isCompleted };
-    setHabits([...habits, newHabit]);
-
-    // Reset form
-    setHabitName("");
-    setDuration("");
-    setIsCompleted(false);
-    setIsFormVisible(false); // Hide form after submission
-  };
-
-  // Toggle completion status
-  const toggleCompletion = (index) => {
-    setHabits((prevHabits) =>
-      prevHabits.map((habit, i) =>
-        i === index ? { ...habit, isCompleted: !habit.isCompleted } : habit
-      )
-    );
-  };
-
-  // Set habit duration
-  const updateDuration = (index) => {
-    const newDuration = prompt("Enter new duration (days):", habits[index].duration);
-    if (newDuration !== null && newDuration !== "") {
-      setHabits((prevHabits) =>
-        prevHabits.map((habit, i) =>
-          i === index ? { ...habit, duration: newDuration } : habit
-        )
-      );
+    if (onSave) {
+      onSave(formData); // Send the form data to the parent component
     }
+    setFormData({ name: "", description: "", startDate: "", endDate: "" });
+    setIsOpen(false);
   };
 
   return (
-    <div className="container">
-      <div className="toolbar">
-        <button className="icon active" onClick={() => setIsFormVisible(!isFormVisible)}>
-          ✏️
-        </button>
-      </div>
-
-      {isFormVisible && (
-        <div className="habit-box">
-          <p className="info">What habit do you want to track?</p>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              placeholder="Enter habit"
-              value={habitName}
-              onChange={(e) => setHabitName(e.target.value)}
-              required
-            />
-            <input
-              type="number"
-              placeholder="Duration (days)"
-              value={duration}
-              onChange={(e) => setDuration(e.target.value)}
-              required
-            />
-            <label>
-              <input
-                type="checkbox"
-                checked={isCompleted}
-                onChange={() => setIsCompleted(!isCompleted)}
-              />
-              Completed
-            </label>
-            <button type="submit" className="create-habit">
-              Create Habit
-            </button>
-          </form>
-        </div>
-      )}
-
-      <div className="habit-list">
-        <h3>Tracked Habits</h3>
-        {habits.map((habit, index) => (
-          <div key={index} className="habit">
-            <p><strong>{habit.name}</strong> - {habit.duration} days</p>
-            <p>Status: {habit.isCompleted ? "✅ Completed" : "⏳ In Progress"}</p>
-            <button className="icon" onClick={() => updateDuration(index)}>📅</button>
-            <button className="icon" onClick={() => toggleCompletion(index)}>✔️</button>
+    <div className="habit-form-container">
+      {!isOpen ? (
+        <button onClick={toggleForm} className="open-form-button">+</button>
+      ) : (
+        <form onSubmit={handleSubmit} className="habit-form">
+          <div className="habit-form-header">
+            <p className="habit-form-title">ⓘ What habit do you want to track?</p>
+            <p className="habit-form-name">{formData.name || "Your Habit"}</p>
           </div>
-        ))}
-      </div>
+          <div className="habit-form-group">
+            <label>Name:</label>
+            <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+          </div>
+          <div className="habit-form-group">
+            <label>Description:</label>
+            <textarea name="description" value={formData.description} onChange={handleChange} required />
+          </div>
+          <div className="habit-form-dates">
+            <div>
+              <label>Start Date:</label>
+              <input type="date" name="startDate" value={formData.startDate} onChange={handleChange} required />
+            </div>
+            <div>
+              <label>End Date:</label>
+              <input type="date" name="endDate" value={formData.endDate} onChange={handleChange} required />
+            </div>
+          </div>
+          <button type="submit" className="create-habit-button">Create Habit</button>
+          <button type="button" onClick={toggleForm} className="cancel-button">Cancel</button>
+        </form>
+      )}
     </div>
   );
-};
+}
 
-export default HabitCreate;
+
+
+
+/* new component 
+  event handler
+    name variable
+    description variable
+ */
