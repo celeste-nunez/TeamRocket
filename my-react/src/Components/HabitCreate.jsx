@@ -64,12 +64,3 @@ export default function HabitCreate({ onSave }) {
     </div>
   );
 }
-
-
-
-
-/* new component 
-  event handler
-    name variable
-    description variable
- */
