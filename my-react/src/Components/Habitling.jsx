@@ -1,40 +1,50 @@
 
+import React, { useState } from "react";
+import HabitCreate from "./HabitCreate";
 import "./Habitling.css";
-import Sprite from './SpriteAnimation';
- 
 
-function Habitling({ name, description, streak, bestStreak, petImage }) {
-    return (
-       <div className="box">
-            {/* Name */}
-            <div className="name-box">
-                <h2 className="name">{name || "Unnamed Habitling"}</h2>
+const Habitling = () => {
+  const [habits, setHabits] = useState([]);
+
+  const addHabit = (newHabit) => {
+    const habitWithDefaults = {
+      petName: newHabit.name,
+      habitName: newHabit.description,
+      frequency: `Start: ${newHabit.startDate} - End: ${newHabit.endDate}`,
+      currentStreak: 0,
+      bestStreak: 0,
+      image: "path_to_default_image.png", // Replace Sprite URL
+    };
+
+    setHabits([...habits, habitWithDefaults]);
+  };
+
+  return (
+    <div>
+      <h1>Habitling</h1>
+      <HabitCreate onSave={addHabit} />
+      <div className="habit-container">
+        {habits.map((habit, index) => (
+          <div key={index} className="habit-card">
+            <h2 className="habit-title">{habit.petName}</h2>
+            <label className="habit-label">
+              <input type="checkbox" className="habit-checkbox" />
+              {habit.habitName}
+            </label>
+            <p className="habit-frequency">{habit.frequency}</p>
+            <div className="habit-streak">
+              <p>Current streak: {habit.currentStreak}</p>
+              <p>Best streak: {habit.bestStreak}</p>
             </div>
-
-            {/* Description */}
-            <form action="/submit form">
-                <div class="checkbox-description">
-                    <h2 class="habit-name">Have a good day</h2>
-                    <h3 class="habit-interval">Every other day</h3>
-                </div>
-                <label class="check-habit">
-                    <input type="checkbox"/>
-                </label>
-            </form>
-
-            {/* Stats */}
-            <div className="stats-box">
-                <h3 className="streak">🔥 Streak: {streak || 0} days</h3>
-                <h3 className="streak-best">🏆 Best: {bestStreak || 0} days</h3>
+            <div className="habit-image-container">
+              <img src={habit.image} alt={habit.petName} className="habit-image" />
             </div>
-
-            {/* Pet Image */}
-            <div className="pet-box">
-                <Sprite className="sprite"/>
-                <img src="../assets/spritesheet 3.png" alt="" />
-            </div>
-       </div> 
-    );
-}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default Habitling;
+
