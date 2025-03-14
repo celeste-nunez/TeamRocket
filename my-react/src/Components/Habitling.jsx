@@ -16,6 +16,7 @@ const Habitling = () => {
       image: "path_to_default_image.png", // Replace Sprite URL
     };
 
+
     setHabits([...habits, habitWithDefaults]);
   };
 
