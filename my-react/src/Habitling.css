@@ -1,3 +1,18 @@
+/*I think this is the box that adds habitling?*/
+
+:root {
+    --primary-color: #4B6A34;
+    --secondary-color: #97C953;
+    --accent-color1: #739E4B;
+    --accent-color2: #C3DF46;
+    --accent-color3: #474430; 
+    --primary-font: "Comfortaa";
+    --secondary-font: "Fredoka", "Poppins"; 
+    --paragraph-font: "Tinos", Helvetica, sans-serif; 
+
+}
+
+
 .habitling-box {
     border: 2px solid black;
     padding: 0px;
@@ -9,6 +24,7 @@
     text-align: center;
 }
 
+/*Top name*/
 .habitling-name {
     align-items: center;
     justify-content: center;
@@ -20,6 +36,7 @@
     margin: 0 auto;  
 }
 
+/*I don't see this on the site*/
 .habitling-description {
     color: #666;
     margin-top: 8px;
@@ -46,9 +63,20 @@
     color: blue;
 }
 
+/*Atom lookin' picture*/
 .habitling-pet-box img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     margin-top: 10px;
+}
+
+/*Have a good day*/
+.habit-name {
+    color: black;
+}
+
+/*Every other day*/
+.habit-interval {
+    color: black;
 }

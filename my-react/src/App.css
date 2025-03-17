@@ -1,8 +1,22 @@
+/*This is the nav*/
+
+
+
+
 #root {
   width: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  --primary-color: #4B6A34;
+  --secondary-color: #97C953;
+  --accent-color1: #739E4B;
+  --accent-color2: #C3DF46;
+  --accent-color3: #474430; 
+  --primary-font: "Comfortaa";
+  --secondary-font: "Fredoka", "Poppins"; 
+  --paragraph-font: "Tinos", Helvetica, sans-serif; 
+
 }
 
 .logo {
@@ -13,11 +27,11 @@
 }
 
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em var(--primary-color));
 }
 
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em var(--primary-color));
 }
 
 @keyframes logo-spin {
@@ -47,7 +61,7 @@
 footer {
   display: flex;
   justify-content: space-between;
-  background-color: #f7c4ae;
+  background-color: var(--secondary-color);
   align-items: center;
   position: fixed;
   bottom: 0;
@@ -73,10 +87,10 @@ footer {
   margin-right: 1em;
 }
 
-/* pretty nav buttonr */
+/* pretty nav buttons */
 .nav-opt {
   margin: 0.2em;
-  background-color: var(--accent-color3);
+  background-color: var(--accent-color1);
   color: var(--text-light);
   border: none;
   padding: 0.7em 1.2em;
@@ -90,7 +104,7 @@ footer {
 
 /* Hover effect */
 .nav-opt:hover {
-  background-color: #6577cc;
+  background-color: var(--primary-color);
   transform: translateY(-3px);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }

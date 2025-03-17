@@ -1,3 +1,4 @@
+/*This is the green cat homepage*/
 
 :root 
 {
@@ -44,6 +45,7 @@
     height: 25em;
     z-index: 1;
     border-radius: 0.5em;
+    /* border-color: #474430; */
 }
 /* creating text-box for hero */
 .hero-txt 
@@ -91,23 +93,22 @@
 }
 
 
-footer {
-    display:flex;
-    justify-content: space-between;
-    background-color: var(--secondary-color); /* main color*/
-
 /* fixed position for footer */
 footer
 {
     display: flex;
     justify-content: space-between;
-    background-color: aliceblue;
 
     align-items: center;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
+
+    display:flex;
+    justify-content: space-between;
+    background-color: var(--secondary-color); /* main color*/
+
 }
 
  
@@ -120,7 +121,6 @@ footer
     color: var(--accent-color3); /* logo color*/
     font-family: 'Chicle', cursive;
     letter-spacing: 0.1em;
-    /* -webkit-text-stroke: 0.1px white; */
 }
  
 /* establishing horizontal view and nest for nav options */
@@ -135,7 +135,6 @@ footer
     background-color: var(--accent-color1);
     color: white;
     border: none;
-    /* padding: 0.7em 1.2em; */
     padding: 1em 1.8em;
     font-size: 18px;
     font-weight: bold;
@@ -165,23 +164,70 @@ footer
 /* For small screens (mobile) */
 @media screen and (max-width: 600px) {
     footer {
+        position: relative;
         flex-direction: column; /* Stack items vertically */
         text-align: center;
-        padding: 1em 0;
+        padding: 1em;
+        width: 100%;
+        max-width: 100%;
+
     }
     
     .nav-menu {
-        align-items: center;
+        /* align-items: center; */
+        flex-wrap: wrap; /* Ensure buttons wrap*/
+        justify-content: center;
+        width: 100%;
+        max-width: 100%;
+
     }
 
     .nav-opt {
         width: 90%; /* Make buttons full-width */
-        padding: 1em;
+        padding: 0.8em 1em;
         font-size: 18px;
+        font-size: 16px;
+        margin: 0.5em 0;
     }
+
+    .nav-opt1, .nav-opt2, .nav-opt3 {
+        width: 90px;
+    }
+
 
     .nav-head {
         font-size: 2rem; /* Reduce logo size */
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-img img {
+        height: 15em; /* Reduce image size */
+        max-width: 90%;
+    }
+
+    .hero-txt {
+        left: 0;
+        width: 90%;
+        padding: 1em;
+    }
+
+    .hero-title {
+        font-size: 2.5rem; /* Reduce size */
+    }
+
+    .hero-subtext {
+        font-size: 1.5rem; /* Adjust */
+    }
+
+    body {
+        overflow-x: hidden;
     }
 }
 
@@ -208,7 +254,7 @@ footer
     display: flex;
     margin: 1em;
     font-weight: bolder;
-    color: #4A90E2;
+    /* color: #4A90E2; */
 }
 /* establishing horizontal view and nest for nav options */
 .nav-menu
@@ -219,7 +265,7 @@ footer
 /* pretty nav buttonr */
 .nav-opt {
     margin: 8px;
-    background-color: #4A90E2;    
+    /* background-color: #4A90E2;     */
     color: white;                 
     border: none;                 
     padding: 12px 24px;           
@@ -230,9 +276,22 @@ footer
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     transition: all 0.3s ease;    
 }
+
+
+.nav-opt1, .nav-opt2, .nav-opt3 {
+    margin: 8px;
+    background-color: var(--accent-color1);                 
+    border: none;                 
+    padding: 12px 24px;           
+    border-radius: 25px;          
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    width: 40px;
+    height: 40px;
+}
+
 /* Hover effect */
 .nav-opt:hover {
-    background-color: #357ABD;    
+    /* background-color: #357ABD;     */
     transform: translateY(-3px);  
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); 
 }
@@ -241,4 +300,3 @@ footer
     transform: translateY(0);     
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);  
 }
-
