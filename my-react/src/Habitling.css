@@ -1,4 +1,4 @@
-.habitling-box {
+/* .habitling-box {
     border: 2px solid black;
     padding: 0px;
     border-radius: 10px;
@@ -51,4 +51,97 @@
     height: 60px;
     border-radius: 50%;
     margin-top: 10px;
+} */
+
+.habit-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.habit-card {
+    border: 2px solid black;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    max-width: 300px;
+    text-align: center;
+}
+
+.habit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.habit-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.habit-label {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.habit-checkbox {
+    margin-right: 5px;
+}
+
+.habit-divider {
+    border: none;
+    border-top: 2px solid black;
+    margin: 10px 0;
+}
+
+.habit-streak {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.streak-current {
+    color: orange;
+}
+
+.streak-best {
+    color: blue;
+}
+
+.habit-tracker {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 10px 0;
+}
+
+.habit-day-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.habit-day-filled {
+    background-color: green;
+}
+
+.habit-day-current {
+    border: 2px dotted black;
+}
+
+.habit-image-container {
+    margin-top: 10px;
+}
+
+.habit-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
 }
