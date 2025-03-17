@@ -1,4 +1,6 @@
 /* establishing horizontal view in hero  */
+
+@import url('https://fonts.googleapis.com/css2?family=Chicle&display=swap');
 .hero
 {
     display: flex;

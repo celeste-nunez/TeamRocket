@@ -37,6 +37,8 @@
   --nav-background-color: var(--secondary-color);
   --nav-hover-link-color: white;
   --nav-hover-background-color: var(--primary-color);
+
+  
 }
 footer{
   position:absolute;
