@@ -8,15 +8,6 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  --primary-color: #4B6A34;
-  --secondary-color: #97C953;
-  --accent-color1: #739E4B;
-  --accent-color2: #C3DF46;
-  --accent-color3: #474430; 
-  --primary-font: "Comfortaa";
-  --secondary-font: "Fredoka", "Poppins"; 
-  --paragraph-font: "Tinos", Helvetica, sans-serif; 
-
 }
 
 .logo {
@@ -61,7 +52,7 @@
 footer {
   display: flex;
   justify-content: space-between;
-  background-color: var(--secondary-color);
+  background-color: #f7c4ae;
   align-items: center;
   position: fixed;
   bottom: 0;
@@ -87,7 +78,7 @@ footer {
   margin-right: 1em;
 }
 
-/* pretty nav buttons */
+/* pretty nav buttonr */
 .nav-opt {
   margin: 0.2em;
   background-color: var(--accent-color1);
@@ -104,13 +95,14 @@ footer {
 
 /* Hover effect */
 .nav-opt:hover {
-  background-color: var(--primary-color);
+  background-color: #6577cc;
   transform: translateY(-3px);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+
 }
 
 /* Active (when clicked) effect */
-.nav-opt:active {
+button:active {
   transform: translateY(0);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
