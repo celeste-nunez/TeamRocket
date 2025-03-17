@@ -1,9 +1,8 @@
 
 
 import './App.css';
-// import Check_habit from './Check_habit'
- habitling-component
-import Habitling from './Components/Habitling';
+
+
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from './Components/NavBar';
 import HomePage from './HomePage';
@@ -14,11 +13,9 @@ function App() {
 
 
   return (
- habitling-component
-    <>
-      <NavBar/>
-      <Habitling/>
-    </>
+ 
+  <>
+    <NavBar/>
 
     <Router>
       <NavBar />
@@ -30,7 +27,7 @@ function App() {
 
       </Routes>
     </Router>
- main
+  </>
   );
 }
 
