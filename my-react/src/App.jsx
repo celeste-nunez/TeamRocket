@@ -8,15 +8,13 @@ import NavBar from './Components/NavBar';
 import HomePage from './HomePage';
 import HabitlingZoo from './HabitlingZoo';
 import AboutUs from './AboutUs';
- main
+ 
 function App() {
 
 
   return (
  
   <>
-    <NavBar/>
-
     <Router>
       <NavBar />
       <Routes>
