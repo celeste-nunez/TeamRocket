@@ -1,3 +1,5 @@
+/* Container for adding a habitling*/
+
 #root {
   width: 100%;
   margin: 0 auto;
@@ -142,33 +144,44 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 10px;
+
 }
 
 .habit-form-header {
   text-align: center;
   margin-bottom: 10px;
+  color: black;
+
 }
 
 .habit-form-title {
   font-size: 14px;
   color: gray;
+
 }
 
+/*Your Habit*/
 .habit-form-name {
   font-size: 18px;
   font-weight: bold;
+  color: black;
+
 }
 
 .habit-form-group {
   display: flex;
   flex-direction: column;
+
 }
 
+/*Name: and Description:*/
 .habit-form-group label {
   font-weight: bold;
   margin-bottom: 5px;
+  color: black;
 }
 
+/*Words in description and name box*/
 .habit-form-group input,
 .habit-form-group textarea {
   padding: 8px;
@@ -176,14 +189,17 @@ footer {
   border-radius: 5px;
 }
 
+/*Start Date: and End Date:*/
 .habit-form-dates {
   display: flex;
   justify-content: space-between;
+  color: black;
 }
 
 .habit-form-dates div {
   display: flex;
   flex-direction: column;
+  color: black;
 }
 
 .create-habit-button {
