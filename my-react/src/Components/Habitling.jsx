@@ -1,11 +1,31 @@
 import React, { useState, useEffect } from "react";
 import HabitCreate from "./HabitCreate";
+import {fetchHabits} from "..firebase_stuff/Data"
+import { onAuthStateChanged } from "firebase/auth";
+
 import "./Habitling.css";
 
 const Habitling = () => {
   const [habits, setHabits] = useState([]);
   const currentDayIndex = new Date().getDay();
+  const [user, setUser] = useState(null);
 
+
+  // Load habitlings when component mounts
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(authFromFirebase, async (currentUser) => {
+      setUser(currentUser);//I don't know if I need this here. Chat said to and I worry
+      if (currentUser) {
+          const usersHabits = await fetchHabits(currentUser.uid);
+          setHabits(userHabits);
+      } else {
+          setHabits([]); // Clear messages when user logs out
+      }  
+    });
+    return () => unsubscribe(); // Cleanup on unmount
+  }, []);
+
+//reset the weekly counter
   useEffect(() => {
     resetWeeklyCompletion();
   }, []);
@@ -18,21 +38,6 @@ const Habitling = () => {
         currentStreak: 0, // Reset streak
       }))
     );
-  };
-
-  const addHabit = (newHabit) => {
-    const habitWithDefaults = {
-      petName: newHabit.name,
-      habitName: newHabit.description,
-      frequency: `Start: ${newHabit.startDate} - End: ${newHabit.endDate}`,
-      currentStreak: 0,
-      bestStreak: 0,
-      image: "path_to_default_image.png",
-      completion: Array(7).fill(false),
-      lastUpdatedWeek: new Date().getWeek(), // Track the current week
-    };
-
-    setHabits([...habits, habitWithDefaults]);
   };
 
   const toggleDayCompletion = (habitIndex) => {
@@ -73,6 +78,22 @@ const Habitling = () => {
     );
     return Math.ceil((pastDays + firstDayOfYear.getDay() + 1) / 7);
   };
+
+  const addHabit = (newHabit) => {
+    const habitWithDefaults = {
+      petName: newHabit.name,
+      habitName: newHabit.description,
+      frequency: `Start: ${newHabit.startDate} - End: ${newHabit.endDate}`,
+      currentStreak: 0,
+      bestStreak: 0,
+      image: "path_to_default_image.png",
+      completion: Array(7).fill(false),
+      lastUpdatedWeek: new Date().getWeek(), // Track the current week
+    };
+    //add "send message" or the habitling equivilent here, so that each new habit is sent to the cloud
+    setHabits([...habits, habitWithDefaults]);
+  };
+  //add update habit functionality. 
 
   return (
     <div>
