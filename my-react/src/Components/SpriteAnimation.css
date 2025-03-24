@@ -41,9 +41,9 @@ body {
     image-rendering: pixelated;
     
  }
- .down{
+.down{
     /* top:calc(var(--row)*var(--pixel-size)); */
- }
+}
 
 .size{/*no need to change this. I didn't want to keep telling things that they're 16px big so I wrote it here and applied it to everything*/
     width: calc(16px * var(--pixel-size));
