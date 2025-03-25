@@ -1,0 +1,79 @@
+/* establishing horizontal view in hero  */
+
+@import url('https://fonts.googleapis.com/css2?family=Chicle&display=swap');
+.hero
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+    position: relative;
+}
+/* styling hero image */
+.hero-img
+{
+    height: 25em;
+    z-index: 1;
+    border-radius: 0.5em;
+}
+/* creating text-box for hero */
+.hero-txt 
+{
+    z-index: 2;
+    background-color: var(--secondary-color); /* main box*/
+    text-align: center;
+    border: 8px solid;
+    border-radius: 0.7em; 
+    border-color: var(--accent-color3);
+    position: relative;
+    left: -3em;
+}
+/* "new you" styling */
+.hero-title
+{
+    font-family: 'Chicle', cursive;
+    color: var(--accent-color3);
+    letter-spacing: 0.1em;
+    font-size: 4rem;
+    text-decoration: underline wavy;
+    text-underline-offset: 3px;
+    text-decoration-skip-ink: none;
+    text-decoration: underline wavy var(--accent-color2);
+    text-decoration-thickness: 8px;
+    text-underline-offset: 0.2em;
+    -webkit-text-stroke: 0.5px white;
+    margin: 0.5em;
+}
+/* "shouldn't wait for new year" styling */
+.hero-subtext
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 2rem;
+    margin: 1em 2em;
+    color: var(--accent-color3);
+    /* -webkit-text-stroke: 1px; */
+}
+/* login button styling (also grouped in w/ nav-opt button syling*/
+.hero-button
+{
+    margin-bottom: 1em; 
+    
+}
+
+
+/* For medium screens (tablets) */
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    .hero {
+        align-items: center;
+    }
+
+    .hero-img img {
+        height: 20em; /* Reduce image size */
+    }
+
+    .hero-txt {
+        left: 0; /* Remove offset for better centering */
+        width: 80%;
+    }
+}

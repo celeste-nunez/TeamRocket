@@ -1,0 +1,118 @@
+.habit-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Habit Card */
+.habit-card {
+  border: 2px solid black;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  max-width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title at the top */
+.habit-title {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Goal Section */
+.habit-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Checkbox & Habit Name Spaced Evenly */
+.habit-label {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.habit-checkbox {
+  margin-right: 5px;
+}
+
+/* Divider Lines */
+.habit-divider {
+  border: none;
+  border-top: 2px solid black;
+  margin: 10px 0;
+  width: 100%;
+}
+
+/* Streaks Section */
+.habit-streak {
+  display: flex;
+  justify-content: space-evenly; /* Spaces icons evenly */
+  width: 100%;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.streak-current {
+  color: orange;
+}
+
+.streak-best {
+  color: blue;
+}
+
+/* 7-Day Progress Tracker */
+.habit-tracker {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.habit-day-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* Prevents clicking */
+}
+
+.habit-day-filled {
+  background-color: green;
+}
+
+/* Highlight Current Day */
+.habit-day-current {
+  border: 2px dotted black !important;
+}
+
+/* Image Section */
+.habit-image-container {
+  margin-top: 10px;
+}
+
+.habit-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
