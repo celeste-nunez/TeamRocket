@@ -8,17 +8,13 @@ import HomePage from './HomePage';
 import HabitlingZoo from './HabitlingZoo';
 import AboutUs from './AboutUs';
 function App() {
-
-
   return (
     <Router>
-      <NavBar />
+      <NavBar/>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/HabitlingZoo" element={<HabitlingZoo />} />
         <Route path="/AboutUs" element={<AboutUs />} />
-
-
       </Routes>
     </Router>
   );
