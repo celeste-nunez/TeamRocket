@@ -1,38 +1,41 @@
 /* establishing horizontal view in hero  */
 
 @import url('https://fonts.googleapis.com/css2?family=Chicle&display=swap');
-.hero
-{
+
+.hero {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 5em;
     position: relative;
+    margin-bottom: 200px;
 }
+
 /* styling hero image */
-.hero-img
-{
+.hero-img {
     height: 25em;
     z-index: 1;
     border-radius: 0.5em;
+    border: 8px solid var(--accent-color1);
 }
+
 /* creating text-box for hero */
-.hero-txt 
-{
+.hero-txt {
     z-index: 2;
-    background-color: var(--secondary-color); /* main box*/
+    background-color: var(--secondary-color);
+    /* main box*/
     text-align: center;
     border: 8px solid;
-    border-radius: 0.7em; 
-    border-color: var(--accent-color3);
+    border-radius: 0.7em;
+    border-color: var(--accent-color1);
     position: relative;
     left: -3em;
 }
+
 /* "new you" styling */
-.hero-title
-{
+.hero-title {
     font-family: 'Chicle', cursive;
-    color: var(--accent-color3);
+    color: var(--primary-color);
     letter-spacing: 0.1em;
     font-size: 4rem;
     text-decoration: underline wavy;
@@ -41,12 +44,12 @@
     text-decoration: underline wavy var(--accent-color2);
     text-decoration-thickness: 8px;
     text-underline-offset: 0.2em;
-    -webkit-text-stroke: 0.5px white;
+    -webkit-text-stroke: 1px white;
     margin: 0.5em;
 }
+
 /* "shouldn't wait for new year" styling */
-.hero-subtext
-{
+.hero-subtext {
     font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
     font-size: 2rem;
@@ -54,11 +57,19 @@
     color: var(--accent-color3);
     /* -webkit-text-stroke: 1px; */
 }
+
 /* login button styling (also grouped in w/ nav-opt button syling*/
-.hero-button
-{
-    margin-bottom: 1em; 
-    
+.hero-button {
+    background-color: var(--accent-color2);
+    color: var(--primary-color);
+    border: 1px solid var(--accent-color2);
+    transition: 0.3s;
+    margin-bottom: 1em;
+}
+
+.hero-button:hover {
+    background-color: var(--primary-color);
+    border: 1px solid var(--accent-color2);
 }
 
 
@@ -69,11 +80,13 @@
     }
 
     .hero-img img {
-        height: 20em; /* Reduce image size */
+        height: 20em;
+        /* Reduce image size */
     }
 
     .hero-txt {
-        left: 0; /* Remove offset for better centering */
+        left: 0;
+        /* Remove offset for better centering */
         width: 80%;
     }
 }
