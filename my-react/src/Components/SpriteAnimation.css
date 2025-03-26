@@ -16,9 +16,9 @@ Also a dictionary of all the habitlings needs to be added with their frame count
     --animation-start:calc(var(--column)*4*var(--animation-chunk)); /*where to start is the column*number of sprite in a column(4)* how big those sprites are*/
 }
   
-body {
+/* body {
     background: white;
-}
+} */
   
 .sprite {
     overflow:hidden;
