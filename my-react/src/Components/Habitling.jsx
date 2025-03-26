@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import HabitCreate from "./HabitCreate";
 import "./Habitling.css";
 
+
 const Habitling = () => {
   const [habits, setHabits] = useState([]);
   const currentDayIndex = new Date().getDay();
@@ -105,9 +106,8 @@ const Habitling = () => {
               {habit.completion.map((done, dayIdx) => (
                 <div
                   key={dayIdx}
-                  className={`habit-day-circle ${
-                    done ? "habit-day-filled" : ""
-                  } ${dayIdx === currentDayIndex ? "habit-day-current" : ""}`}
+                  className={`habit-day-circle ${done ? "habit-day-filled" : ""
+                    } ${dayIdx === currentDayIndex ? "habit-day-current" : ""}`}
                 />
               ))}
             </div>
