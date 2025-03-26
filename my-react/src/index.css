@@ -17,29 +17,32 @@
   --secondary-color: #97C953;
   --accent-color1: #739E4B;
   --accent-color2: #C3DF46;
-  --accent-color3: #474430; 
+  --accent-color3: #F6FBE2;
   --text-dark: black;
   --text-light: white;
   --primary-font: "Comfortaa";
-  --secondary-font: "Fredoka", "Poppins"; 
-  --paragraph-font: "Tinos", Helvetica, sans-serif; 
+  --secondary-font: "Fredoka", "Poppins";
+  --paragraph-font: "Tinos", Helvetica, sans-serif;
   /* these colors below should be chosen from among your palette colors above */
-  --headline-color-on-white: var(
-    --primary-color
-  ); /* headlines on a white background */
-  --headline-color-on-color: white; /* headlines on a colored background */
-  --paragraph-color-on-white: var(
-    --primary-color
-  ); /* paragraph text on a white background */
-  --paragraph-color-on-color: white; /* paragraph text on a colored background */
+  --headline-color-on-white: var(--primary-color);
+  /* headlines on a white background */
+  --headline-color-on-color: white;
+  /* headlines on a colored background */
+  --paragraph-color-on-white: var(--primary-color);
+  /* paragraph text on a white background */
+  --paragraph-color-on-color: white;
+  /* paragraph text on a colored background */
   --paragraph-background-color: var(--primary-color);
   --nav-link-color: var(--primary-color);
   --nav-background-color: var(--secondary-color);
   --nav-hover-link-color: white;
   --nav-hover-background-color: var(--primary-color);
+
+
 }
-footer{
-  position:absolute;
+
+footer {
+  position: absolute;
   z-index: 2;
 }
 
@@ -48,6 +51,7 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -76,9 +80,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -89,9 +95,11 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
