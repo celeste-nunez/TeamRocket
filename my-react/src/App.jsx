@@ -11,18 +11,19 @@ import Habitling from './Components/Habitling';
 // add AboutUs function, generate more html
 import AboutUs from './AboutUs';
 
-//App returns the Router->Routes->Route for the different pages of our site, defined through the imports
 function App() {
   return (
-  <>
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/Habitling" element={<Habitling />} />
-        <Route path="/AboutUs" element={<AboutUs />} />
-      </Routes>
-    </Router>
-  </>
+
+
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/Habitling" element={<Habitling />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
@@ -37,7 +38,7 @@ export default App
 //when It does it see if there's a user. If there is a user still (new or old) it loades the habitlings, if there is no use it gives and empty list of habitlings.
 //all of the meat of habitlings is stored in "habits" 
 // (i.e. const [habits, setHabits] = useState([]);
-        //        ^ this guy right here
+//        ^ this guy right here
 //       const currentDayIndex = new Date().getDay();
 //       const [user, setUser] = useState(null);
 // )
