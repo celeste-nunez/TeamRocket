@@ -1,16 +1,16 @@
 // add useState + useEffect from react system
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 // add the HabitCreate function from the corresponding jsx file
 import HabitCreate from "./HabitCreate";
 // add the NavBar function to throw together its HTML
 import NavBar from './NavBar';
 // add the auth constant/variable from firebase
-import {auth} from "../firebase_stuff/firebase_imports"; 
+import { auth } from "../firebase_stuff/firebase_imports";
 // add the functions fetch + update + save + delete habitlings from firebase/Data file
 // each function's impact corresponds to its name and what it does to a habitling entry
-import {fetchHabits, updateHabitling, saveHabitling, deleteHabitling} from "../firebase_stuff/Data"
+import { fetchHabits, updateHabitling, saveHabitling, deleteHabitling } from "../firebase_stuff/Data"
 // import the Auth state changed DIRECTLY from firebase
-import {onAuthStateChanged} from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
 // add the habitling style sheet
 import "./Habitling.css";
 // add the AnimateSprite function
@@ -20,7 +20,7 @@ import Sprite from "./SpriteAnimation";
 //initlize the habitling
 const Habitling = () => {
   const [habits, setHabits] = useState([]);
-  
+
   // retrieve the date and user state (set user or unset)
   const currentDayIndex = new Date().getDay();
   const [user, setUser] = useState(null);
@@ -33,19 +33,19 @@ const Habitling = () => {
       setUser(currentUser);//I don't know if I need this here. Chat said to and I worry
       // if a user is present, fetch their habitlings
       if (currentUser) {
-          const usersHabits = await fetchHabits();
-          
-          // set habits to the user's fetched habitlings
-          setHabits(usersHabits);
-      // if no user exisits, clear the displayed habitlings, nothing shows up for them
+        const usersHabits = await fetchHabits();
+
+        // set habits to the user's fetched habitlings
+        setHabits(usersHabits);
+        // if no user exisits, clear the displayed habitlings, nothing shows up for them
       } else {
-          setHabits([]); // Clear messages when user logs out
-      }  
+        setHabits([]); // Clear messages when user logs out
+      }
     });
     return () => unsubscribe(); // Cleanup on unmount
   }, []);
 
-//reset the weekly counter
+  //reset the weekly counter
   useEffect(() => {
     resetWeeklyCompletion();
   }, []);
@@ -62,7 +62,7 @@ const Habitling = () => {
     );
   };
 
-// add habitling, with habit defualts embedded 
+  // add habitling, with habit defualts embedded 
   const addHabit = (newHabit) => {
     // set the defaults for new habitling, populate with data
     const habitWithDefaults = {
@@ -135,14 +135,14 @@ const Habitling = () => {
     //   return Math.ceil((pastDays + firstDayOfYear.getDay() + 1) / 7);
     // };
     // Then use lastUpdatedWeek: getWeek() instead of modifying the Date object.
-    };
+  };
 
-// generate the HTML display for each habitling, with a form 
-// the form allows the user to check off if they have completed the habit or not
-// it also displays the week's successes/failures, and the habitling's best streak
+  // generate the HTML display for each habitling, with a form 
+  // the form allows the user to check off if they have completed the habit or not
+  // it also displays the week's successes/failures, and the habitling's best streak
   return (
     <>
-      <NavBar/>
+      <NavBar />
       <div>
         <h1>Habitling</h1>
         <HabitCreate onSave={addHabit} />
@@ -156,7 +156,7 @@ const Habitling = () => {
                     type="checkbox"
                     className="habit-checkbox"
                     checked={habit.completion[currentDayIndex]}
-                    onChange={() => toggleDayCompletion(index) }
+                    onChange={() => toggleDayCompletion(index)}
                   />
                   {habit.habitName}
                 </label>
@@ -173,9 +173,8 @@ const Habitling = () => {
                 {habit.completion.map((done, dayIdx) => (
                   <div
                     key={dayIdx}
-                    className={`habit-day-circle ${
-                      done ? "habit-day-filled" : ""
-                    } ${dayIdx === currentDayIndex ? "habit-day-current" : ""}`}
+                    className={`habit-day-circle ${done ? "habit-day-filled" : ""
+                      } ${dayIdx === currentDayIndex ? "habit-day-current" : ""}`}
                   />
                 ))}
               </div>
@@ -183,7 +182,7 @@ const Habitling = () => {
               <hr className="habit-divider" />
 
               <div className="habit-image-container">
-                <Sprite sprite = {habit.image} />
+                <Sprite sprite={habit.image} />
               </div>
             </div>
           ))}
