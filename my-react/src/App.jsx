@@ -1,5 +1,3 @@
-
-
 import './App.css';
 
 
@@ -8,24 +6,24 @@ import NavBar from './Components/NavBar';
 import HomePage from './HomePage';
 import Habitling from './Components/Habitling';
 import AboutUs from './AboutUs';
- 
+
 function App() {
 
 
   return (
- 
-  <>
-    <Router>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/Habitling" element={<Habitling />} />
-        <Route path="/AboutUs" element={<AboutUs />} />
+
+    <>
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/Habitling" element={<Habitling />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
 
 
-      </Routes>
-    </Router>
-  </>
+        </Routes>
+      </Router>
+    </>
   );
 }
 
