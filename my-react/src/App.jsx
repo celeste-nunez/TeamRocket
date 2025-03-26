@@ -14,13 +14,15 @@ import AboutUs from './AboutUs';
 function App() {
   return (
 
-
     <>
       <Router>
+        <NavBar />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/Habitling" element={<Habitling />} />
           <Route path="/AboutUs" element={<AboutUs />} />
+
+
         </Routes>
       </Router>
     </>
