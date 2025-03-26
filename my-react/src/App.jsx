@@ -8,10 +8,8 @@ import Habitling from './Components/Habitling';
 import AboutUs from './AboutUs';
 
 function App() {
-
-
   return (
-
+ 
     <>
       <Router>
         <NavBar />
