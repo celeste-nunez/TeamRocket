@@ -106,23 +106,19 @@ const Habitling = () => {
       completion: Array(7).fill(false),
       lastUpdatedWeek: new Date().getWeek(), // Track the current week
     };
-    console.log("before save");
+    
     saveHabitling(habitWithDefaults);//maybe newHabitDefaults instead
-    console.log("after save");
+    
     //add "send message" or the habitling equivilent here, so that each new habit is sent to the cloud
     setHabits([...habits, habitWithDefaults]);
   };
   //add update habit functionality. 
-  function log(item) {
-    console.log(item);
-  }
+
   return (
     <>
       <NavBar/>
       <div>
         <h1>Habitling</h1>
-        {console.log(habits)}
-        {/* {habits.forEach(log)} */}
         <HabitCreate onSave={addHabit} />
         <div className="habit-container">
           {habits.map((habit, index) => (

@@ -42,11 +42,14 @@ export default App
 // )
 
 //so adding to or taking away from that list is how we change what appears on screen. Look to the day clicking functionality to see how to take one out of the list and change it
+//added a send habitling functionality to habitling.
+// added updateaHabit functionality. 
+//updated Data.jsx to have proper encoding of habitlings
+
 
 
 //what still needs to be done with firebase:
-//we need to add a send habitling functionality to habitling. Theres a note in the "addHabit" function at the bottom about that
-//we need to add updateaHabit functionality. 
-//along those lines we have to go back into Data.jsx and change all of the code that sent and loaded messages to sending and loading habitlings. 
-//I've changed the names but not the code.
-//fetchHabits(); // This method should be what fills out our habitlings. We can use this to populate the right and give that nice effect I was thinking about
+//get everyone to install firebase on their local computers
+//polish if anythings. 
+//run stress tests
+//add better rules in the firebase to we're not locked out in 30 days and so it's secure.

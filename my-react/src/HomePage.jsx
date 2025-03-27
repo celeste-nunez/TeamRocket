@@ -5,7 +5,7 @@ import {auth} from "./firebase_stuff/firebase_imports"
 import {handleGoogleSignIn, handleLogout} from "./firebase_stuff/Auth"
 
 function logInOut () {
-    if(!auth) { 
+    if(!auth.currentUser) { 
         handleLogout()
         console.log("I tried to log out")
     } 
@@ -25,7 +25,7 @@ function HomePage() {
                 <div className="hero-txt">
                     <h1 className="hero-title">Habitlings</h1>
                     <h1 className="hero-subtext">Your routines live here</h1>
-                    <button onClick={logInOut} className="hero-button nav-opt">Log In</button>
+                    <button onClick={logInOut} className="hero-button nav-opt">Log In/ Out</button>
                 </div>
             </div>
         </>
