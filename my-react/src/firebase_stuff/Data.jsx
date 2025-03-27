@@ -1,5 +1,5 @@
 // import React, { useEffect, useState } from "react";
-import { db} from "./firebase_imports";
+import { auth, db} from "./firebase_imports";
 import { collection, setDoc, updateDoc, deleteDoc, doc, query, where, getDocs } from "firebase/firestore";
 // import { onAuthStateChanged } from "firebase/auth";
 
@@ -18,10 +18,14 @@ import { collection, setDoc, updateDoc, deleteDoc, doc, query, where, getDocs } 
 //this only saves one habitling. Why would we need more? if you make a new habitling it is saved
 //if you make two they are saved.
 //if you update one it's updated. We should never need to save the user's entier roster because 
-export const saveHabitling = async (habitling, petName) => {
+export const saveHabitling = async (habitling) => {
+  console.log("in save");
   try {
-    const docRef = doc(db, "allHabits", petName);//pet name now has to be unique, but we can add a qualifier for that.
-    await setDoc(collection(db, "allHabits"), habitling);
+    const docRef = doc(db, "allHabits", habitling.petName);//pet name now has to be unique, but we can add a qualifier for that.
+    await setDoc(docRef, {
+      habitling,
+      userId: auth.currentUser.uid
+    });
     alert("habitling saved!");
 
   } catch (error) {
@@ -54,15 +58,19 @@ export const updateHabitling = async (streakCurrent, streakBest, completion, pet
 };
 
 //this pulls all of the habitlings down
-export const fetchHabits = async (user) => {
+export const fetchHabits = async () => {
   try{
-    const q = query(collection(db, "allHabits"), where("userId", "==", user.uid));
-    const snapshot = await getDocs(q);
-    // const habits = (snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));dont' think we need this
+    const q = query(collection(db, "allHabits"), where("userId", "==", auth.currentUser.uid));
+    console.log(q);
+    const EveryHabitYouOwn = await getDocs(q);
+    const habitsArray = EveryHabitYouOwn.docs.map((doc) => doc.data().habitling);
+
+    return habitsArray;
     //need to see how it stores, then make it unwrap in a way that habits wants it to be
-    return snapshot
   } catch {
+    console.log("no habits ya shrimp!")
     console.error("Error fetching messages:", error.message);
+    
     return [];
   }
 };

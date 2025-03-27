@@ -1,24 +1,26 @@
 import React, {useState, useEffect} from "react";
 import HabitCreate from "./HabitCreate";
-// import { db} from "./firebase"; maybe wont need?
+import NavBar from './NavBar';
+import {auth} from "../firebase_stuff/firebase_imports"; 
 import {fetchHabits, updateHabitling, saveHabitling, deleteHabitling} from "../firebase_stuff/Data"
-import {onAuthStateChanged, getAuth} from "firebase/auth";
+import {onAuthStateChanged} from "firebase/auth";
 import "./Habitling.css";
 
 const Habitling = () => {
   const [habits, setHabits] = useState([]);
-  console.log(habits)
+  
   const currentDayIndex = new Date().getDay();
   const [user, setUser] = useState(null);
 
 
   // Load habitlings when component mounts
   useEffect(() => {
-    const auth = getAuth();
+    
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);//I don't know if I need this here. Chat said to and I worry
       if (currentUser) {
           const usersHabits = await fetchHabits();
+          
           setHabits(usersHabits);
       } else {
           setHabits([]); // Clear messages when user logs out
@@ -104,59 +106,68 @@ const Habitling = () => {
       completion: Array(7).fill(false),
       lastUpdatedWeek: new Date().getWeek(), // Track the current week
     };
-    saveHabitling(newHabit, newHabit.name);//maybe newHabitDefaults instead
+    console.log("before save");
+    saveHabitling(habitWithDefaults);//maybe newHabitDefaults instead
+    console.log("after save");
     //add "send message" or the habitling equivilent here, so that each new habit is sent to the cloud
     setHabits([...habits, habitWithDefaults]);
   };
   //add update habit functionality. 
-
+  function log(item) {
+    console.log(item);
+  }
   return (
-    <div>
-      <h1>Habitling</h1>
-      <HabitCreate onSave={addHabit} />
-      <div className="habit-container">
-        {habits.map((habit, index) => (
-          <div key={index} className="habit-card">
-            <div className="habit-header">
-              <h2 className="habit-title">{habit.petName}</h2>
-              <label className="habit-label">
-                <input
-                  type="checkbox"
-                  className="habit-checkbox"
-                  checked={habit.completion[currentDayIndex]}
-                  onChange={() => toggleDayCompletion(index) }
-                />
-                {habit.habitName}
-              </label>
+    <>
+      <NavBar/>
+      <div>
+        <h1>Habitling</h1>
+        {console.log(habits)}
+        {/* {habits.forEach(log)} */}
+        <HabitCreate onSave={addHabit} />
+        <div className="habit-container">
+          {habits.map((habit, index) => (
+            <div key={index} className="habit-card">
+              <div className="habit-header">
+                <h2 className="habit-title">{habit.petName}</h2>
+                <label className="habit-label">
+                  <input
+                    type="checkbox"
+                    className="habit-checkbox"
+                    checked={habit.completion[currentDayIndex]}
+                    onChange={() => toggleDayCompletion(index) }
+                  />
+                  {habit.habitName}
+                </label>
+              </div>
+
+              <hr className="habit-divider" />
+
+              <div className="habit-streak">
+                <p className="streak-current">🔥 {habit.currentStreak}</p>
+                <p className="streak-best">🏆 {habit.bestStreak}</p>
+              </div>
+
+              <div className="habit-tracker">
+                {habit.completion.map((done, dayIdx) => (
+                  <div
+                    key={dayIdx}
+                    className={`habit-day-circle ${
+                      done ? "habit-day-filled" : ""
+                    } ${dayIdx === currentDayIndex ? "habit-day-current" : ""}`}
+                  />
+                ))}
+              </div>
+
+              <hr className="habit-divider" />
+
+              <div className="habit-image-container">
+                <img src={habit.image} alt={habit.petName} className="habit-image" />
+              </div>
             </div>
-
-            <hr className="habit-divider" />
-
-            <div className="habit-streak">
-              <p className="streak-current">🔥 {habit.currentStreak}</p>
-              <p className="streak-best">🏆 {habit.bestStreak}</p>
-            </div>
-
-            <div className="habit-tracker">
-              {habit.completion.map((done, dayIdx) => (
-                <div
-                  key={dayIdx}
-                  className={`habit-day-circle ${
-                    done ? "habit-day-filled" : ""
-                  } ${dayIdx === currentDayIndex ? "habit-day-current" : ""}`}
-                />
-              ))}
-            </div>
-
-            <hr className="habit-divider" />
-
-            <div className="habit-image-container">
-              <img src={habit.image} alt={habit.petName} className="habit-image" />
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

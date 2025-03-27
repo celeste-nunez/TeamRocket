@@ -1,18 +1,14 @@
-// import React, {useState} from "react";
-import { authFromFirebase } from "./firebase_imports";
+
+import { auth } from "./firebase_imports";
 import {  GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 
-
-
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
     const googleProvider = new GoogleAuthProvider();
 
     
 
     export const handleGoogleSignIn = async () => {
         try {
-            await signInWithPopup(authFromFirebase, googleProvider);
+            await signInWithPopup(auth, googleProvider);
             alert("Google Sign-In Success!");
         } catch (error) {
             handleAuthError(error);
@@ -21,7 +17,7 @@ import {  GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 
     export const handleLogout = async () => {
         try {
-            await signOut(authFromFirebase);
+            await signOut(auth);
             alert("Logged out!");
         } catch (error) {
             handleAuthError(error);
