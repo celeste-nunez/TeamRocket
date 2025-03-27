@@ -52,3 +52,4 @@ export default App
 //we need to add updateaHabit functionality. 
 //along those lines we have to go back into Data.jsx and change all of the code that sent and loaded messages to sending and loading habitlings. 
 //I've changed the names but not the code.
+//fetchHabits(); // This method should be what fills out our habitlings. We can use this to populate the right and give that nice effect I was thinking about

@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+// import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
@@ -13,8 +13,8 @@ const firebaseApp = initializeApp({
     measurementId: "G-0B6FCN2389"
 });
 
-const analytics = getAnalytics(app);
-const app = initializeApp(firebaseApp);
+// const analytics = getAnalytics(firebaseApp);
+// const app = initializeApp(firebaseApp);
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
 

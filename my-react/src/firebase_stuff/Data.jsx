@@ -1,44 +1,66 @@
 // import React, { useEffect, useState } from "react";
-import { db} from "./firebase";
-import { collection, addDoc, query, where, getDocs } from "firebase/firestore";
+import { db} from "./firebase_imports";
+import { collection, setDoc, updateDoc, deleteDoc, doc, query, where, getDocs } from "firebase/firestore";
 // import { onAuthStateChanged } from "firebase/auth";
 
 
 
-const [Habitling, setHabitling] = useState("");
-const [messages, setMessages] = useState([]);
+// const [habitling, setHabitling] = useState("");
+// const [allHabits, setHabits] = useState([]);
 
-// // Save data to Firestore
+// Save data to Firestore
 // const saveData = async () => {
 //   if (!authFromFirebase.currentUser) {
 //     alert("Please login first");
 //     return;
 //   }
-
-  //also need update docs
-export const sendData = async (habitling, userId) => {
+// };
+//this only saves one habitling. Why would we need more? if you make a new habitling it is saved
+//if you make two they are saved.
+//if you update one it's updated. We should never need to save the user's entier roster because 
+export const saveHabitling = async (habitling, petName) => {
   try {
-    await addDoc(collection(db, "messages"), {
-      Habitling,
-      userId: authFromFirebase.currentUser.uid,
-      createdAt: new Date(),//changed this from timestamp. maybe will break
-    });
-    alert("Message saved!");
-    setHabitling(""); // Clear input after saving
-    fetchHabits(); // This method should be what fills out our habitlings. We can use this to populate the right and give that nice effect I was thinking about
+    const docRef = doc(db, "allHabits", petName);//pet name now has to be unique, but we can add a qualifier for that.
+    await setDoc(collection(db, "allHabits"), habitling);
+    alert("habitling saved!");
+
   } catch (error) {
     alert(error.message);
   }
 };
 
-// Fetch user-specific data from Firestore 
-//this needs to be updated to retrieve habitlings instead of messages
-export const fetchHabits = async () => {
-  // if (!authFromFirebase.currentUser) return;
+
+export const deleteHabitling = async (petName) => {
+  try {
+    await deleteDoc(doc(db, "allHabits", petName));
+    alert("habitling deleted");
+  } catch (error) {
+    alert(error.message);
+  }
+};
+
+export const updateHabitling = async (streakCurrent, streakBest, completion, petName) => {
+  const habitlingName = doc(db, "allHabits", petName);
+  try {
+    await updateDoc(habitlingName, {
+      current: {streakCurrent},//this can be changed to increment(1) if we wanted to.
+      best: {streakBest},
+      completion: {completion},
+    });
+    alert("habitling saved!");   
+  } catch (error) {
+    alert(error.message);
+  }
+};
+
+//this pulls all of the habitlings down
+export const fetchHabits = async (user) => {
   try{
-    const q = query(collection(db, "messages"), where("userId", "==", authFromFirebase.currentUser.uid));
+    const q = query(collection(db, "allHabits"), where("userId", "==", user.uid));
     const snapshot = await getDocs(q);
-    setMessages(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+    // const habits = (snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));dont' think we need this
+    //need to see how it stores, then make it unwrap in a way that habits wants it to be
+    return snapshot
   } catch {
     console.error("Error fetching messages:", error.message);
     return [];

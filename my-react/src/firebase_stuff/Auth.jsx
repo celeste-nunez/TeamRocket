@@ -1,5 +1,5 @@
 // import React, {useState} from "react";
-import { authFromFirebase } from "./firebase";
+import { authFromFirebase } from "./firebase_imports";
 import {  GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 
 
