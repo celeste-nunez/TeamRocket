@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import HabitCreate from "./HabitCreate";
 import "./Habitling.css";
+import Sprite from "./SpriteAnimation";
+
 
 const Habitling = () => {
   const [habits, setHabits] = useState([]);
@@ -27,7 +29,7 @@ const Habitling = () => {
       frequency: `Start: ${newHabit.startDate} - End: ${newHabit.endDate}`,
       currentStreak: 0,
       bestStreak: 0,
-      image: "path_to_default_image.png",
+      image: {Sprite},
       completion: Array(7).fill(false),
       lastUpdatedWeek: new Date().getWeek(), // Track the current week
     };
@@ -105,9 +107,8 @@ const Habitling = () => {
               {habit.completion.map((done, dayIdx) => (
                 <div
                   key={dayIdx}
-                  className={`habit-day-circle ${
-                    done ? "habit-day-filled" : ""
-                  } ${dayIdx === currentDayIndex ? "habit-day-current" : ""}`}
+                  className={`habit-day-circle ${done ? "habit-day-filled" : ""
+                    } ${dayIdx === currentDayIndex ? "habit-day-current" : ""}`}
                 />
               ))}
             </div>
@@ -115,7 +116,7 @@ const Habitling = () => {
             <hr className="habit-divider" />
 
             <div className="habit-image-container">
-              <img src={habit.image} alt={habit.petName} className="habit-image" />
+              <Sprite />
             </div>
           </div>
         ))}

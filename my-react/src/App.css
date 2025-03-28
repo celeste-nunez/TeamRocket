@@ -5,22 +5,17 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  --primary-color: #4B6A34;
+  --secondary-color: #97C953;
+  --accent-color1: #739E4B;
+  --accent-color2: #C3DF46;
+  --accent-color3: #F6FBE2;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
 
 
 .card {
@@ -31,7 +26,7 @@
   color: #888;
 }
 
-footer {
+/* footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -39,23 +34,12 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-}
-
-/* the logo in footer
-.nav-head {
-  display: flex;
-  margin: 0.5em;
-  font-weight: bolder;
-  font-size: 3rem;
-  color: var(--accent-color3);
-  font-family: 'Chicle', cursive;
-  letter-spacing: 0.1em;
-  -webkit-text-stroke: 0.1px black;
 } */
 
 
+
 /*Habitling at the top*/
-h1 {
+/* h1 {
   font-family: 'Chicle', cursive;
   margin: 0.5em;
   font-weight: bolder;
@@ -65,7 +49,8 @@ h1 {
   -webkit-text-stroke: 0.1px black;
 
 
-}
+} */
+
 
 
 /* establishing horizontal view and nest for nav options */
@@ -75,7 +60,7 @@ h1 {
 }
 
 /* pretty nav button */
-.nav-opt {
+/* .nav-opt {
   margin: 0.2em;
   background-color: var(--accent-color3);
   color: var(--text-light);
@@ -87,19 +72,20 @@ h1 {
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-}
+} */
 
 /* Hover effect */
-.nav-opt:hover {
+/* .nav-opt:hover {
+  background-color: #6577cc;
   transform: translateY(-3px);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
+} */
 
 /* Active (when clicked) effect */
-.nav-opt:active {
+/* .nav-opt:active {
   transform: translateY(0);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-}
+} */
 
 /* Create Habit component styling */
 
@@ -114,15 +100,15 @@ h1 {
 }
 
 .open-form-button {
-  background-color: #007bff;
-  color: white;
+  background-color: var(--accent-color2);
+  color: var(--primary-color);
   border: none;
   font-size: 24px;
   width: 50px;
   height: 50px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  
+
   /* Adding Flexbox to center the content */
   display: flex;
   justify-content: center;
@@ -131,13 +117,13 @@ h1 {
 
 
 .open-form-button:hover {
-  background-color: #0056b3;
+  background-color: var(--accent-color1);
 }
 
 
 .habit-form {
-  background: white;
-  border: 1px solid #ccc;
+  background: var(--accent-color3);
+  border: 3px solid var(--accent-color1);
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -145,7 +131,7 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 10px;
-
+  margin-bottom: 250px;
 }
 
 .habit-form-header {
@@ -156,17 +142,16 @@ h1 {
 }
 
 .habit-form-title {
-  font-size: 14px;
-  color: gray;
-
+  font-size: 1em;
+  color: var(--primary-color);
 }
 
 /*Your Habit*/
 .habit-form-name {
-  font-size: 18px;
   font-weight: bold;
-  color: black;
-
+  color: var(--primary-color);
+  font-size: 2em;
+  text-decoration: underline;
 }
 
 .habit-form-group {
@@ -185,7 +170,6 @@ h1 {
 /*Words in description and name box*/
 .habit-form-group input,
 .habit-form-group textarea {
-  padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
@@ -204,7 +188,8 @@ h1 {
 }
 
 .create-habit-button {
-  color: white;
+  color: var(--accent-color2);
+  background-color: var(--accent-color1);
   border: none;
   padding: 10px;
   border-radius: 5px;
@@ -213,11 +198,13 @@ h1 {
 }
 
 .create-habit-button:hover {
-  background-color: #218838;
+  background-color: var(--primary-color);
+  transition: 0.4s;
+  transform: translateY(-2px);
 }
 
 .cancel-button {
-  background-color: #dc3545;
+  background-color: #c44854;
   color: white;
   border: none;
   padding: 10px;
@@ -227,7 +214,9 @@ h1 {
 }
 
 .cancel-button:hover {
-  background-color: #c82333;
+  background-color: #be3946;
+  transition: 0.4s;
+  transform: translateY(-2px);
 }
 @keyframes logo-spin {
   from {
@@ -272,3 +261,8 @@ h1 {
 
 }
 
+
+label {
+  color: var(--primary-color);
+  font-size: 1.1em;
+}
