@@ -5,6 +5,8 @@ import {auth} from "../firebase_stuff/firebase_imports";
 import {fetchHabits, updateHabitling, saveHabitling, deleteHabitling} from "../firebase_stuff/Data"
 import {onAuthStateChanged} from "firebase/auth";
 import "./Habitling.css";
+import Sprite from "./SpriteAnimation";
+
 
 const Habitling = () => {
   const [habits, setHabits] = useState([]);
@@ -42,6 +44,22 @@ const Habitling = () => {
         currentStreak: 0, // Reset streak
       }))
     );
+  };
+
+
+  const addHabit = (newHabit) => {
+    const habitWithDefaults = {
+      petName: newHabit.name,
+      habitName: newHabit.description,
+      frequency: `Start: ${newHabit.startDate} - End: ${newHabit.endDate}`,
+      currentStreak: 0,
+      bestStreak: 0,
+      image: {Sprite},
+      completion: Array(7).fill(false),
+      lastUpdatedWeek: new Date().getWeek(), // Track the current week
+    };
+
+    setHabits([...habits, habitWithDefaults]);
   };
 
   const toggleDayCompletion = (habitIndex) => {
@@ -94,6 +112,44 @@ const Habitling = () => {
     // };
     // Then use lastUpdatedWeek: getWeek() instead of modifying the Date object.
     };
+
+  return (
+    <div>
+      <h1>Habitling</h1>
+      <HabitCreate onSave={addHabit} />
+      <div className="habit-container">
+        {habits.map((habit, index) => (
+          <div key={index} className="habit-card">
+            <div className="habit-header">
+              <h2 className="habit-title">{habit.petName}</h2>
+              <label className="habit-label">
+                <input
+                  type="checkbox"
+                  className="habit-checkbox"
+                  checked={habit.completion[currentDayIndex]}
+                  onChange={() => toggleDayCompletion(index)}
+                />
+                {habit.habitName}
+              </label>
+            </div>
+
+            <hr className="habit-divider" />
+
+            <div className="habit-streak">
+              <p className="streak-current">🔥 {habit.currentStreak}</p>
+              <p className="streak-best">🏆 {habit.bestStreak}</p>
+            </div>
+
+            <div className="habit-tracker">
+              {habit.completion.map((done, dayIdx) => (
+                <div
+                  key={dayIdx}
+                  className={`habit-day-circle ${done ? "habit-day-filled" : ""
+                    } ${dayIdx === currentDayIndex ? "habit-day-current" : ""}`}
+                />
+              ))}
+            </div>
+
 
   const addHabit = (newHabit) => {
     const habitWithDefaults = {
@@ -159,6 +215,10 @@ const Habitling = () => {
               <div className="habit-image-container">
                 <img src={habit.image} alt={habit.petName} className="habit-image" />
               </div>
+
+            <div className="habit-image-container">
+              <Sprite />
+
             </div>
           ))}
         </div>

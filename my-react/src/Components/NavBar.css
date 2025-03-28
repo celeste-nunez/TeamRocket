@@ -1,9 +1,8 @@
 /* fixed position for footer */
-footer
-{
+footer {
     display: flex;
     justify-content: space-between;
-    background-color: aliceblue;
+    background-color: var(--accent-color1);
 
     align-items: center;
     position: fixed;
@@ -12,32 +11,32 @@ footer
     width: 100%;
 }
 
- 
+
 /* the logo in footer */
 .nav-head {
     display: flex;
     margin: 0.5em;
     font-weight: bolder;
     font-size: 3rem;
-    color: var(--accent-color3); /* logo color*/
+    color: var(--accent-color2);
+    /* logo color*/
     font-family: 'Chicle', cursive;
     letter-spacing: 0.1em;
-    /* -webkit-text-stroke: 0.1px white; */
+    -webkit-text-stroke: 1px var(--accent-color1);
 }
- 
+
 /* establishing horizontal view and nest for nav options */
 .nav-menu {
     display: flex;
     margin-right: 1em;
 }
- 
+
 /* pretty nav buttons */
 .nav-opt {
     margin: 0.2em;
-    background-color: var(--accent-color1);
-    color: white;
+    background-color: var(--accent-color2);
+    color: var(--primary-color);
     border: none;
-    /* padding: 0.7em 1.2em; */
     padding: 1em 1.8em;
     font-size: 18px;
     font-weight: bold;
@@ -46,17 +45,17 @@ footer
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     -webkit-text-stroke: var(--text-dark);
-
 }
- 
+
 /* Hover effect */
 .nav-opt:hover {
     background-color: var(--primary-color);
     transform: translateY(-3px);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    color: var(--accent-color2);
 
 }
- 
+
 /* Active (when clicked) effect */
 .nav-opt:active {
     transform: translateY(0);
@@ -67,22 +66,25 @@ footer
 
 @media screen and (max-width: 600px) {
     footer {
-        flex-direction: column; /* Stack items vertically */
+        flex-direction: column;
+        /* Stack items vertically */
         text-align: center;
         padding: 1em 0;
     }
-    
+
     .nav-menu {
         align-items: center;
     }
 
     .nav-opt {
-        width: 90%; /* Make buttons full-width */
+        width: 90%;
+        /* Make buttons full-width */
         padding: 1em;
         font-size: 18px;
     }
 
     .nav-head {
-        font-size: 2rem; /* Reduce logo size */
+        font-size: 2rem;
+        /* Reduce logo size */
     }
 }
