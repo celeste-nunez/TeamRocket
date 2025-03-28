@@ -29,7 +29,7 @@ const Habitling = () => {
       frequency: `Start: ${newHabit.startDate} - End: ${newHabit.endDate}`,
       currentStreak: 0,
       bestStreak: 0,
-      image: {Sprite},
+      image: <Sprite sprite={newHabit.sprite} />,
       completion: Array(7).fill(false),
       lastUpdatedWeek: new Date().getWeek(), // Track the current week
     };
