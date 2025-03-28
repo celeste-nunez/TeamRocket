@@ -5,7 +5,7 @@ footer
 {
     display: flex;
     justify-content: space-between;
-    background-color: aliceblue;
+    background-color: rgb(11, 72, 80);
 
     align-items: center;
     position: fixed;
@@ -21,7 +21,7 @@ footer
     margin: 0.5em;
     font-weight: bolder;
     font-size: 3rem;
-    color: var(--accent-color3); /* logo color*/
+    color: var(--accent-color1); /* logo color*/
     font-family: 'Chicle', cursive;
     letter-spacing: 0.1em;
     /* -webkit-text-stroke: 0.1px white; */

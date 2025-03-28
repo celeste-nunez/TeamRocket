@@ -22,21 +22,6 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
 
 .card {
   padding: 2em;
@@ -49,7 +34,6 @@
 footer {
   display: flex;
   justify-content: space-between;
-  background-color: #f7c4ae;
   align-items: center;
   position: fixed;
   bottom: 0;
@@ -57,7 +41,7 @@ footer {
   width: 100%;
 }
 
-/* the logo in footer */
+/* the logo in footer
 .nav-head {
   display: flex;
   margin: 0.5em;
@@ -67,7 +51,22 @@ footer {
   font-family: 'Chicle', cursive;
   letter-spacing: 0.1em;
   -webkit-text-stroke: 0.1px black;
+} */
+
+
+/*Habitling at the top*/
+h1 {
+  font-family: 'Chicle', cursive;
+  margin: 0.5em;
+  font-weight: bolder;
+  font-size: 3rem;
+  color: var(--secondary-color);
+  letter-spacing: 0.1em;
+  -webkit-text-stroke: 0.1px black;
+
+
 }
+
 
 /* establishing horizontal view and nest for nav options */
 .nav-menu {
@@ -92,7 +91,6 @@ footer {
 
 /* Hover effect */
 .nav-opt:hover {
-  background-color: #6577cc;
   transform: translateY(-3px);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
@@ -111,6 +109,8 @@ footer {
   align-items: center;
   flex-direction: column;
   margin-top: 20px;
+  margin-bottom: 5em;
+
 }
 
 .open-form-button {
@@ -133,6 +133,7 @@ footer {
 .open-form-button:hover {
   background-color: #0056b3;
 }
+
 
 .habit-form {
   background: white;
@@ -228,3 +229,46 @@ footer {
 .cancel-button:hover {
   background-color: #c82333;
 }
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+@media (max-width: 769px) {
+  .habit-form-container {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 5em;
+  }
+
+  .habit-form {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 769px) {
+  .habit-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .habit-form {
+    width: 400px;
+  }
+
+}
+
