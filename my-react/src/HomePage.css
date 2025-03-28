@@ -24,7 +24,6 @@
 .hero-txt {
     z-index: 2;
     background-color: var(--secondary-color);
-    /* main box*/
     text-align: center;
     border: 8px solid;
     border-radius: 0.7em;
@@ -40,7 +39,6 @@
     letter-spacing: 0.1em;
     font-size: 4rem;
     text-decoration: underline wavy;
-    text-underline-offset: 3px;
     text-decoration-skip-ink: none;
     text-decoration: underline wavy var(--accent-color2);
     text-decoration-thickness: 8px;
