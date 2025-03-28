@@ -4,8 +4,8 @@ import './index.css'
 import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  // <StrictMode>I commented these out to help not run into double messages temporarily.
     <App />
-  </StrictMode>,
+  //  </StrictMode>, 
 )
 
