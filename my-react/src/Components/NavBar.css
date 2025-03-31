@@ -6,7 +6,7 @@ footer {
     justify-content: space-between;
     /* background-color: rgb(11, 72, 80); */
     background-color: var(--accent-color1);
-
+    margin-top: 1000px;
     align-items: center;
     position: fixed;
     bottom: 0;
@@ -67,7 +67,7 @@ footer {
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
     footer {
         flex-direction: column;
         /* Stack items vertically */
@@ -89,5 +89,12 @@ footer {
     .nav-head {
         font-size: 2rem;
         /* Reduce logo size */
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .nav-opt {
+        font-size: 10px;
     }
 }
