@@ -5,7 +5,7 @@ import {auth} from "./firebase_stuff/firebase_imports"
 import {handleGoogleSignIn, handleLogout} from "./firebase_stuff/Auth"
 
 function logInOut () {
-    if(!auth.currentUser) { 
+    if(auth.currentUser) { 
         handleLogout()
         console.log("I tried to log out")
     } 
