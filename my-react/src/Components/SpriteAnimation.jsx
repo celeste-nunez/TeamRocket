@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import "./SpriteAnimation.css";
 import SpriteSheet from "../assets/spritesheet_5.png";
 
-function AnimateSprite(sprite = { row: 0, column: 0 } ) { // Fallback default value
+function AnimateSprite({sprite = { row: 0, column: 0 } }) { // Fallback default value
   const spriteRef = useRef(null);
 
 
