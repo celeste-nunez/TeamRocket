@@ -5,7 +5,7 @@ import Sprite from "./SpriteAnimation";
 let habitlings = [
   { name: "Mouse", row: 9, column: 5 },
   { name: "Snake", row: 4, column: 2 },
-  { name: "Plant", row: 18, column: 10 },
+  { name: "Plant", row: 18, column: 3 },
 ];
 
 export default function HabitCreate({ onSave }) {
@@ -39,7 +39,7 @@ export default function HabitCreate({ onSave }) {
       description: "",
       startDate: "",
       endDate: "",
-      sprite: habitlings[0],
+      sprite: habitlings[0], // Reset to default sprite
     });
     setIsOpen(false);
   };
