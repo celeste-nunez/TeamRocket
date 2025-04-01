@@ -180,6 +180,55 @@
         "column": 1,
         "frames": 4,
         "time": "1s" 
+    },
+    {
+        "name": "Celeste's Bunny",
+        "row" : 19,
+        "column": 2,
+        "frames": 8,
+        "time": "2s"  
+    },
+    {
+        "name": "Isaiah's Lizard",
+        "row" : 20,
+        "column": 2,
+        "frames": 8,
+        "time": "2s"  
+    },
+    {
+        "name": "Joseph's Coatis",
+        "row" : 21,
+        "column": 2,
+        "frames": 8,
+        "time": "2s"  
+    },
+    {
+        "name": "Holden's Lemur",
+        "row" : 22,
+        "column": 2,
+        "frames": 8,
+        "time": "2s"  
+    },
+    {
+        "name": "Tess's Fox",
+        "row" : 23,
+        "column": 2,
+        "frames": 8,
+        "time": "2s"  
+    },
+    {
+        "name": "Hannah's Cat",
+        "row" : 27,
+        "column": 2,
+        "frames": 8,
+        "time": "2s"  
+    },
+    {
+        "name": "Jacob's Moth",
+        "row" : 28,
+        "column": 2,
+        "frames": 8,
+        "time": "2s"  
     }
     
 ]
