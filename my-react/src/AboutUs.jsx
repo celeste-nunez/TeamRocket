@@ -5,10 +5,10 @@ import NavBar from './Components/NavBar';
 import josephImage from "./assets/josephImage.jpg"; 
 import holdenImage from "./assets/holdenImage.jpeg"; 
 import tessaImage from "./assets/tessaImage.jpg";
-import tessaImage from "./assets/tessaImage.jpg";
+
 import isaiahImage from "./assets/isaiahImage.jpeg"
 import hannahImage from "./assets/hannahImage.jpg"
-import hannahImage from "./assets/hannahImage.jpg"
+
 import jacobImage from "./assets/jacobImage.jpeg"
 import celesteImage from "./assets/Celeste.jpeg"
 
