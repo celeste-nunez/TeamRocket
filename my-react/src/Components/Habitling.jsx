@@ -54,7 +54,7 @@ const Habitling = () => {
       frequency: `Start: ${newHabit.startDate} - End: ${newHabit.endDate}`,
       currentStreak: 0,
       bestStreak: 0,
-      image: {Sprite},
+      image: newHabit.sprite,
       completion: Array(7).fill(false),
       lastUpdatedWeek: new Date().getWeek(), // Track the current week
     };
@@ -161,7 +161,7 @@ const Habitling = () => {
               </div>
 
               <div className="habit-image-container">
-                <Sprite />
+                <Sprite sprite = {habit.image} />
               </div>
             </div>
           ))}
