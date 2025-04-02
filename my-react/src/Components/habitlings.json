@@ -102,7 +102,7 @@
         "row" : 15,
         "column": 2,
         "frames": 8,
-        "time": "1s" 
+        "time": "2s" 
     },
     {
         "name": "Brown Bear",
@@ -129,7 +129,7 @@
         "name": "White Ram",
         "row" : 21,
         "column": 0,
-        "frames": 3,
+        "frames": 4,
         "time": "1s" 
     },
     {

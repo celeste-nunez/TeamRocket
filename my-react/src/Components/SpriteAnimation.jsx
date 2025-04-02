@@ -3,7 +3,7 @@ import SpriteSheet from "../assets/spritesheet_5.png";
 import { useEffect, useRef } from "react";
  
  
-function AnimateSprite({sprite = { row: 0, column: 0 } }) { // Fallback default value
+function AnimateSprite({sprite = { row: 0, column: 0 , frames: 1, time: "1s"} }) { // Fallback default value
   const spriteRef = useRef(null);
  
  
@@ -12,6 +12,8 @@ function AnimateSprite({sprite = { row: 0, column: 0 } }) { // Fallback default 
     if (sprite && spriteRef.current) {
       spriteRef.current.style.setProperty("--row", sprite.row);
       spriteRef.current.style.setProperty("--column", sprite.column);
+      spriteRef.current.style.setProperty("--frames", sprite.frames);
+      spriteRef.current.style.setProperty("--time", sprite.time);
     }
   }, [sprite]);
  

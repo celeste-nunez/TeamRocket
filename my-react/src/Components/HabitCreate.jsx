@@ -1,12 +1,8 @@
 import { useState } from "react";
 import "../App.css";
-import Sprite from "./SpriteAnimation";
+import SpriteLocations from "./habitlings.json";
 
-let habitlings = [
-  { name: "Mouse", row: 9, column: 3 },
-  { name: "Snake", row: 4, column: 3 },
-  { name: "Plant", row: 18, column: 3 },
-];
+let habitlings = SpriteLocations
 
 export default function HabitCreate({ onSave }) {
   const [isOpen, setIsOpen] = useState(false);

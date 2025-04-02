@@ -157,10 +157,6 @@ const Habitling = () => {
               <hr className="habit-divider" />
 
               <div className="habit-image-container">
-                <img src={habit.image} alt={habit.petName} className="habit-image" />
-              </div>
-
-              <div className="habit-image-container">
                 <Sprite sprite = {habit.image} />
               </div>
             </div>
