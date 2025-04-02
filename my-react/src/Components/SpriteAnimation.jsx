@@ -1,20 +1,29 @@
-// add the style sheet that animates the sprites
-import './SpriteAnimation.css'
-// add the sprite image sheet
-import SpriteSheet from '../assets/spritesheet_5.png';
-// import Shadow from "https://s3-us-west-2.amazonaws.com/s.cdpn.io/21542/DemoRpgCharacterShadow.png";
 
-// pull the animation together
-function AnimateSprite(){
+import "./SpriteAnimation.css";
+import SpriteSheet from "../assets/spritesheet_5.png";
+import { useEffect, useRef } from "react";
+ 
+ 
+function AnimateSprite({sprite = { row: 0, column: 0 , frames: 1, time: "1s"} }) { // Fallback default value
+  const spriteRef = useRef(null);
+ 
+ 
+  //   Runs whenever sprite changes ([sprite] dependency array).
+    useEffect(() => {
+      if (sprite && spriteRef.current) {
+        spriteRef.current.style.setProperty("--row", sprite.row);
+        spriteRef.current.style.setProperty("--column", sprite.column);
+        spriteRef.current.style.setProperty("--fames", sprite.frames);
+        spriteRef.current.style.setProperty("--time", sprite.time);
+      }
+    }, [sprite]);
 
-    // generates the HTML for the the sprite display
-    return(
-        <div className="sprite size">
-            {/* <img className="sprite-shadow pixelart size" src={Shadow} alt="Sprite shadow" /> */}
-            <img className="sprite-sheet pixelart down" src={SpriteSheet} alt="This is the image with all potential habitlings on it" />
-        </div>
+    return (
+      <div ref={spriteRef} className="sprite size">
+        <img className="sprite-sheet pixelart down" src={SpriteSheet} alt="Selected Habitling" />
+      </div>
     );
-}
+  }
+ 
 
-// export the function
 export default AnimateSprite;

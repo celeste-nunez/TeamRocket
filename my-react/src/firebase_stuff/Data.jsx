@@ -17,7 +17,7 @@ export const saveHabitling = async (habitling) => {
       habitling
       // userId: auth.currentUser.uid
     });
-    alert("habitling saved!");
+    
 
   } catch (error) {
     // if unsuccessful, alert the user + describe the error
@@ -48,7 +48,7 @@ export const updateHabitling = async (streakCurrent, streakBest, completion, pet
       "habitling.bestStreak": streakBest,
       "habitling.completion": completion,
     });
-    alert("habitling saved!");   
+       
   } catch (error) {
     // if unsuccessful, alert the user + describe the errer
     alert(error.message);
