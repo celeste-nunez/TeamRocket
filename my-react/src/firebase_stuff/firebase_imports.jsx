@@ -1,8 +1,11 @@
+// add firebase App initlizationg, basically connect your firebase App to the website
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
+// retrieve authentication extraction and database connection 
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
+// firebase initlization connection
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyAAycBPStBZDz2LKgRi5pbisa9cfUf4xmc",
     authDomain: "habitlings.firebaseapp.com",
@@ -13,10 +16,12 @@ const firebaseApp = initializeApp({
     measurementId: "G-0B6FCN2389"
 });
 
+// prep the authentication and database variables
 // const analytics = getAnalytics(firebaseApp);
 // const app = initializeApp(firebaseApp);
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
 
+// export authentication and the database
 export { auth, db};
 

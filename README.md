@@ -24,15 +24,15 @@ Habit Tracker
 Web Application
 
 ### Description
-Our program will be a web application that allows users the opportunity to track create new habits, track their habits, and schedule reward systems for consisten
+Our program is be a web application that gives users the opportunity to track and create new habits, in the form of pets, called Habitlings. 
 
 ### List Requirements
 #### Requirements:
-- [x] Login 
-- [ ] Menu
-- [ ] store user data
-- [ ] data base
-- [ ] Goal navigation
+- [x] Authenticated Login (Google) 
+- [x] Menu/Genereal Site Navigation
+- [x] Store + Retrieve User Data
+- [x] Dynamically populate website with retrieved user data
+- [x] Goal Tracking + Streaks
 
 ### Determine Team Roles
 Assign roles to each team member. If you have fewer than 6 people, then some team members will need to have 2 roles.  Refer to the Team Project Description in I-Learn for a description of each role.

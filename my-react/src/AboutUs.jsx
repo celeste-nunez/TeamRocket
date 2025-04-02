@@ -1,9 +1,16 @@
+// import the Card functions for Card.jsx and React from system
 import React from "react";
 import Card from "./Card";
 
 import josephImage from "./assets/josephImage.jpg"; 
 import holdenImage from "./assets/holdenImage.jpeg"; 
+import tessaImage from "./assets/tessaImage.jpeg";
+import isaiahImage from "./assets/isaiahImage.jpeg"
+import hannahImage from "./assets/hannahImage.jpeg"
+import jacobImage from "./assets/jacobImage.jpeg"
+import celesteImage from "./assets/josephImage.jpeg"
 
+// create and return the about us html tags
 function AboutUs() {
     return (
         <div className="app-container">
@@ -31,46 +38,52 @@ function AboutUs() {
             <Card
                 profile_picture={holdenImage}
                 name="Holden Turman"
-                description="UI/UX Designer | Figma | Adobe XD"
+                description=""
                 githubLink="https://github.com/HoldenTurman"
                 linkedinLink="https://www.linkedin.com/in/holdenturman/"
             />
             <Card
-                profile_picture={josephImage}
-                name="Joseph Norales"
+                profile_picture={tessaImage}
+                name=""
                 description="UI/UX Designer | Figma | Adobe XD"
-                githubLink="https://github.com/nor23019"
-                linkedinLink="https://www.linkedin.com/notifications/?filter=all"
+                githubLink="https://github.com/TDashner"
+                linkedinLink="https://www.linkedin.com/in/tessa-dashner-398766260/"
+            />
+            <Card
+                profile_picture={isaiahImage}
+                name="Isaiah Carrin"
+                description=""
+                githubLink="https://github.com/iCarrin"
+                linkedinLink="http://www.linkden.com/in/isaiah-carrin"
+            />
+            <Card
+                profile_picture={hannahImage}
+                name="Hannah Crenshaw"
+                description=""
+                githubLink="https://github.com/PinkCheetah1"
+                linkedinLink="https://www.linkedin.com/in/hannah-crenshaw-989522359"
+            />
+            <Card
+                profile_picture={jacobImage}
+                name="Jacob Emhoff"
+                description="Firebase | Scrum Master | Assistant to Misc."
+                githubLink="https://github.com/AquaSlime66"
+                linkedinLink="https://www.linkedin.com/in/jacob-emhoff-52462a308/"
             />
             <Card
                 profile_picture={josephImage}
                 name="Joseph Norales"
-                description="UI/UX Designer | Figma | Adobe XD"
+                description="React | Web Designer | Scrum Master"
                 githubLink="https://github.com/nor23019"
-                linkedinLink="https://www.linkedin.com/notifications/?filter=all"
+                linkedinLink="https://www.linkedin.com/in/joseph-norales-30837b30a/"
             />
             <Card
-                profile_picture={josephImage}
-                name="Joseph Norales"
-                description="UI/UX Designer | Figma | Adobe XD"
-                githubLink="https://github.com/nor23019"
+                profile_picture={celesteImage}
+                name="Celeste Wahlquist"
+                description=""
+                githubLink="https://github.com/celeste-nunez"
                 linkedinLink="https://www.linkedin.com/notifications/?filter=all"
             />
-            <Card
-                profile_picture={josephImage}
-                name="Joseph Norales"
-                description="UI/UX Designer | Figma | Adobe XD"
-                githubLink="https://github.com/nor23019"
-                linkedinLink="https://www.linkedin.com/notifications/?filter=all"
-            />
-            <Card
-                profile_picture={josephImage}
-                name="Joseph Norales"
-                description="React | Web Designer"
-                githubLink="https://github.com/nor23019"
-                linkedinLink="https://www.linkedin.com/notifications/?filter=all"
-            />
-
         </div>
     );
 }

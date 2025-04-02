@@ -1,12 +1,17 @@
+// add useState from the react system, helps initilize elements and keep them
 import { useState } from "react";
+// add the App stylings
 import "../App.css";
 
 /*
   Put title or sprite image at top of page
  */
 
+// export the HabitCreate function, which takes a boolean indicating whether or not it's saved (T/F) 
 export default function HabitCreate({ onSave }) {
+  // set the open parameter to false (it is closed)
   const [isOpen, setIsOpen] = useState(false);
+  // set the structure for saving
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -14,26 +19,33 @@ export default function HabitCreate({ onSave }) {
     endDate: "",
   });
 
+  // open the form, call setIsOpen if false
   const toggleForm = () => setIsOpen(!isOpen);
 
+  // takes e and manipulates targeted values, setting them into the form
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // takes e, prevents by default, if onSave is ture, send the form to be saved
   const handleSubmit = (e) => {
     e.preventDefault();
     if (onSave) {
       onSave(formData); // Send the form data to the parent component
     }
     setFormData({ name: "", description: "", startDate: "", endDate: "" });
+    // close setIsOpen
     setIsOpen(false);
   };
 
+  // return the HTML for each habitling card
   return (
     <div className="habit-form-container">
       {!isOpen ? (
+        // if the open status is false (or closed) toggle the 'add' button so users can decide to add a habitling
         <button onClick={toggleForm} className="open-form-button">+</button>
       ) : (
+        // if open status is true (or open) open a new form, and populate formdata based on the provided parameters
         <form onSubmit={handleSubmit} className="habit-form">
           <div className="habit-form-header">
             <p className="habit-form-title">ⓘ What habit do you want to track?</p>
