@@ -1,185 +1,186 @@
+ 
 [
     {
-        "name": "green snake",
-        "row" : 0,
+        "name": "Black Bear",
+        "row": 18,
+        "column": 2,
+        "frames": 4,
+        "time": "1s"
+    },
+    {
+        "name": "Black Wolf",
+        "row": 27,
+        "column": 1,
+        "frames": 4,
+        "time": "1s"
+    },
+    {
+        "name": "Blue Snake",
+        "row": 6,
+        "column": 2,
+        "frames": 4,
+        "time": "1s"
+    },
+    {
+        "name": "Brown Bear",
+        "row": 18,
+        "column": 0,
+        "frames": 4,
+        "time": "1s"
+    },
+    {
+        "name": "Brown Cobra",
+        "row": 3,
+        "column": 2,
+        "frames": 8,
+        "time": "2s"
+    },
+    {
+        "name": "Brown Mouse",
+        "row": 12,
         "column": 0,
         "frames": 8,
         "time": "2s"
     },
     {
-        "name": "Ghost pepper",
-        "row" : 18,
-        "column": 3,
-        "frames": 4,
-        "time": "1s"  
-    },
-    {
-        "name": "Green Cobra",
-        "row" : 0,
-        "column": 2,
-        "frames": 8,
-        "time": "2s"  
-    },
-    {
-        "name": "Brown Snake",
-        "row" : 3,
-        "column": 0,
-        "frames": 8,
-        "time": "2s"  
-    },
-    {
-        "name": "Brown Cobra",
-        "row" : 3,
-        "column": 2,
-        "frames": 8,
-        "time": "2s" 
-    },
-    {
-        "name": "Red Snake",
-        "row" : 6,
-        "column": 0,
-        "frames": 4,
-        "time": "1s" 
-    },
-    {
-        "name": "Red Silver Snake",
-        "row" : 6,
-        "column": 1,
-        "frames": 4,
-        "time": "1s" 
-    },
-    {
-        "name": "Blue Snake",
-        "row" : 6,
-        "column": 2,
-        "frames": 4,
-        "time": "1s" 
-    },
-    {
-        "name": "White Snake",
-        "row" : 6,
-        "column": 3,
-        "frames": 4,
-        "time": "1s" 
-    },
-    {
-        "name": "Brown White Mouse",
-        "row" : 9,
-        "column": 0,
-        "frames": 8,
-        "time": "2s" 
-    },
-    {
-        "name": "White Mouse",
-        "row" : 9,
-        "column": 2,
-        "frames": 8,
-        "time": "2s" 
-    },
-    {
-        "name": "Brown Mouse",
-        "row" : 12,
-        "column": 0,
-        "frames": 8,
-        "time": "2s" 
-    },
-    {
-        "name": "Gray Mouse",
-        "row" : 12,
-        "column": 2,
-        "frames": 8,
-        "time": "2s" 
-    },
-    {
-        "name": "Pidgeon",
-        "row" : 15,
-        "column": 0,
-        "frames": 8,
-        "time": "2s" 
-    },
-    {
-        "name": "Seagull",
-        "row" : 15,
-        "column": 2,
-        "frames": 8,
-        "time": "1s" 
-    },
-    {
-        "name": "Brown Bear",
-        "row" : 18,
-        "column": 0,
-        "frames": 4,
-        "time": "1s" 
-    },
-    {
-        "name": "Grizzly Bear",
-        "row" : 18,
-        "column": 1,
-        "frames": 4,
-        "time": "1s" 
-    },
-    {
-        "name": "Black Bear",
-        "row" : 18,
-        "column": 2,
-        "frames": 4,
-        "time": "1s" 
-    },
-    {
-        "name": "White Ram",
-        "row" : 21,
-        "column": 0,
-        "frames": 3,
-        "time": "1s" 
-    },
-    {
         "name": "Brown Ram",
-        "row" : 21,
+        "row": 21,
         "column": 1,
         "frames": 4,
-        "time": "1s" 
-    },
-    {
-        "name": "Silver Wolf",
-        "row" : 24,
-        "column": 0,
-        "frames": 4,
-        "time": "1s" 
-    },
-    {
-        "name": "Gray Wolf",
-        "row" : 24,
-        "column": 1,
-        "frames": 4,
-        "time": "1s" 
+        "time": "1s"
     },
     {
         "name": "Brown Silver Wolf",
-        "row" : 24,
+        "row": 24,
         "column": 2,
         "frames": 4,
-        "time": "1s" 
+        "time": "1s"
+    },
+    {
+        "name": "Brown Snake",
+        "row": 3,
+        "column": 0,
+        "frames": 8,
+        "time": "2s"
+    },
+    {
+        "name": "Brown White Mouse",
+        "row": 9,
+        "column": 0,
+        "frames": 8,
+        "time": "2s"
     },
     {
         "name": "Brown Wolf",
-        "row" : 24,
+        "row": 24,
         "column": 3,
         "frames": 4,
-        "time": "1s" 
+        "time": "1s"
+    },
+    {
+        "name": "Ghost pepper",
+        "row": 18,
+        "column": 3,
+        "frames": 4,
+        "time": "1s"
+    },
+    {
+        "name": "Gray Mouse",
+        "row": 12,
+        "column": 2,
+        "frames": 8,
+        "time": "2s"
+    },
+    {
+        "name": "Gray Wolf",
+        "row": 24,
+        "column": 1,
+        "frames": 4,
+        "time": "1s"
+    },
+    {
+        "name": "Green Cobra",
+        "row": 0,
+        "column": 2,
+        "frames": 8,
+        "time": "2s"
+    },
+    {
+        "name": "green snake",
+        "row": 0,
+        "column": 0,
+        "frames": 8,
+        "time": "2s"
+    },
+    {
+        "name": "Grizzly Bear",
+        "row": 18,
+        "column": 1,
+        "frames": 4,
+        "time": "1s"
+    },
+    {
+        "name": "Pidgeon",
+        "row": 15,
+        "column": 0,
+        "frames": 8,
+        "time": "2s"
+    },
+    {
+        "name": "Red Silver Snake",
+        "row": 6,
+        "column": 1,
+        "frames": 4,
+        "time": "1s"
+    },
+    {
+        "name": "Red Snake",
+        "row": 6,
+        "column": 0,
+        "frames": 4,
+        "time": "1s"
+    },
+    {
+        "name": "Seagull",
+        "row": 15,
+        "column": 2,
+        "frames": 8,
+        "time": "1s"
+    },
+    {
+        "name": "Silver Wolf",
+        "row": 24,
+        "column": 0,
+        "frames": 4,
+        "time": "1s"
     },
     {
         "name": "Tan Wolf",
-        "row" : 27,
+        "row": 27,
         "column": 0,
         "frames": 4,
-        "time": "1s" 
+        "time": "1s"
     },
     {
-        "name": "Black Wolf",
-        "row" : 27,
-        "column": 1,
+        "name": "White Mouse",
+        "row": 9,
+        "column": 2,
+        "frames": 8,
+        "time": "2s"
+    },
+    {
+        "name": "White Ram",
+        "row": 21,
+        "column": 0,
+        "frames": 3,
+        "time": "1s"
+    },
+    {
+        "name": "White Snake",
+        "row": 6,
+        "column": 3,
         "frames": 4,
-        "time": "1s" 
+        "time": "1s"
     }
-    
 ]
+ 
