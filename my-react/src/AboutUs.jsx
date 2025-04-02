@@ -4,11 +4,11 @@ import Card from "./Card";
 
 import josephImage from "./assets/josephImage.jpg"; 
 import holdenImage from "./assets/holdenImage.jpeg"; 
-import tessaImage from "./assets/tessaImage.jpeg";
+import tessaImage from "./assets/tessaImage.jpg";
 import isaiahImage from "./assets/isaiahImage.jpeg"
-import hannahImage from "./assets/hannahImage.jpeg"
+import hannahImage from "./assets/hannahImage.jpg"
 import jacobImage from "./assets/jacobImage.jpeg"
-import celesteImage from "./assets/josephImage.jpeg"
+import celesteImage from "./assets/celesteImage.jpeg"
 
 // create and return the about us html tags
 function AboutUs() {
