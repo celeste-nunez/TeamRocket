@@ -1,12 +1,17 @@
+// import the style for the html (see previous file)
 import './App.css';
 
-
+// import the framework for react from react outline
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
+//add the home page function (add the html for the nav-bar)
 import HomePage from './HomePage';
+//add the habitling item 
 import Habitling from './Components/Habitling';
+// add AboutUs function, generate more html
 import AboutUs from './AboutUs';
 
+//App returns the Router->Routes->Route for the different pages of our site, defined through the imports
 function App() {
   return (
  
@@ -24,6 +29,7 @@ function App() {
   );
 }
 
+//the App function is prepared for export
 export default App
 
 //chat GPT link "https://chatgpt.com/share/67e1e9c4-d790-8000-9150-ef733a821ba5"

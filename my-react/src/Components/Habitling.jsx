@@ -1,29 +1,43 @@
+// add useState + useEffect from react system
 import React, {useState, useEffect} from "react";
+// add the HabitCreate function from the corresponding jsx file
 import HabitCreate from "./HabitCreate";
+// add the NavBar function to throw together its HTML
 import NavBar from './NavBar';
+// add the auth constant/variable from firebase
 import {auth} from "../firebase_stuff/firebase_imports"; 
+// add the functions fetch + update + save + delete habitlings from firebase/Data file
+// each function's impact corresponds to its name and what it does to a habitling entry
 import {fetchHabits, updateHabitling, saveHabitling, deleteHabitling} from "../firebase_stuff/Data"
+// import the Auth state changed DIRECTLY from firebase
 import {onAuthStateChanged} from "firebase/auth";
+// add the habitling style sheet
 import "./Habitling.css";
+// add the AnimateSprite function
 import Sprite from "./SpriteAnimation";
 
 
+//initlize the habitling
 const Habitling = () => {
   const [habits, setHabits] = useState([]);
   
+  // retrieve the date and user state (set user or unset)
   const currentDayIndex = new Date().getDay();
   const [user, setUser] = useState(null);
 
 
   // Load habitlings when component mounts
   useEffect(() => {
-    
+    // user auth with current user, see if the user has changed (or logged out)
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);//I don't know if I need this here. Chat said to and I worry
+      // if a user is present, fetch their habitlings
       if (currentUser) {
           const usersHabits = await fetchHabits();
           
+          // set habits to the user's fetched habitlings
           setHabits(usersHabits);
+      // if no user exisits, clear the displayed habitlings, nothing shows up for them
       } else {
           setHabits([]); // Clear messages when user logs out
       }  
@@ -36,9 +50,11 @@ const Habitling = () => {
     resetWeeklyCompletion();
   }, []);
 
+  // reset the week, set habits to previous habits
   const resetWeeklyCompletion = () => {
     setHabits((prevHabits) =>
       prevHabits.map((habit) => ({
+        //for each habit, re-fill the array will unfilled days
         ...habit,
         completion: Array(7).fill(false), // Reset completion
         currentStreak: 0, // Reset streak
@@ -46,8 +62,9 @@ const Habitling = () => {
     );
   };
 
-
+// add habitling, with habit defualts embedded 
   const addHabit = (newHabit) => {
+    // set the defaults for new habitling, populate with data
     const habitWithDefaults = {
       petName: newHabit.name,
       habitName: newHabit.description,
@@ -62,26 +79,33 @@ const Habitling = () => {
     setHabits([...habits, habitWithDefaults]);
   };
 
+  // complete the day
   const toggleDayCompletion = (habitIndex) => {
     setHabits((prevHabits) =>
       prevHabits.map((habit, hIdx) => {
+        // for each habit (on user by user basis) return itself if it hasn't been completed
         if (hIdx !== habitIndex) return habit;
 
+        // pass the new day completion into the habitling
         const newCompletion = [...habit.completion];
         newCompletion[currentDayIndex] = !newCompletion[currentDayIndex];
 
+        // add to or break the streak, if needed
         let newCurrentStreak = habit.currentStreak;
         let newBestStreak = habit.bestStreak;
 
+        // was the habit completed today?
         if (newCompletion[currentDayIndex]) {
           // Increment streak if marking as complete
           newCurrentStreak += 1;
           newBestStreak = Math.max(newBestStreak, newCurrentStreak);
         } else {
-          // Reset streak if unchecked
+          // Reset streak if the habit was not completed today
           newCurrentStreak = 0;
         }
+        // update the habitling with the streak inputs, based on its name
         updateHabitling(newCurrentStreak, newBestStreak, newCompletion, habit.petName)
+        // return the streak w/ habit
         return {
           ...habit,
           completion: newCompletion,
@@ -113,7 +137,9 @@ const Habitling = () => {
     // Then use lastUpdatedWeek: getWeek() instead of modifying the Date object.
     };
 
-
+// generate the HTML display for each habitling, with a form 
+// the form allows the user to check off if they have completed the habit or not
+// it also displays the week's successes/failures, and the habitling's best streak
   return (
     <>
       <NavBar/>
@@ -167,6 +193,7 @@ const Habitling = () => {
   );
 };
 
+// export the Habitling functions
 export default Habitling;
 
 

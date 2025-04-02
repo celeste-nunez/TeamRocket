@@ -1,3 +1,4 @@
+
 import "./SpriteAnimation.css";
 import SpriteSheet from "../assets/spritesheet_5.png";
 import { useEffect, useRef } from "react";
@@ -24,4 +25,5 @@ function AnimateSprite({sprite = { row: 0, column: 0 , frames: 1, time: "1s"} })
     );
   }
  
+
 export default AnimateSprite;

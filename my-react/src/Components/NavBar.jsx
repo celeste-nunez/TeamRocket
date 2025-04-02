@@ -1,7 +1,12 @@
+// add react from the system
 import React from "react";
+// add Link from react system
+// Link allows links to be inserted to different pages
 import { Link } from "react-router-dom"; 
+// add the css for the nav bar
 import './NavBar.css';
 
+// generate the HTML for the nav bar, with links
 const NavBar = () => {
     return (
         <footer>
@@ -15,4 +20,5 @@ const NavBar = () => {
     );
 };
 
+// return the HTML generator
 export default NavBar;

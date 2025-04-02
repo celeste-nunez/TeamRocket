@@ -1,3 +1,5 @@
+/* provides the styles for each habitling, :root ensures it can be shared globally */
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
