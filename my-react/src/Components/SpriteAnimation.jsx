@@ -1,6 +1,6 @@
 
 import "./SpriteAnimation.css";
-import SpriteSheet from "../assets/spritesheet_5.png";
+import SpriteSheet from "../assets/updated-spritesheet.png";
 import { useEffect, useRef } from "react";
  
  
