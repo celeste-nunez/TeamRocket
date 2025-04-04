@@ -1,5 +1,3 @@
-/* provides the styles for each habitling, :root ensures it can be shared globally */
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -32,6 +30,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 81px;
 }
 
 /* Title at the top */

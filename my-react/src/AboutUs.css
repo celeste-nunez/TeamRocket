@@ -1,0 +1,21 @@
+.team-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+}
+
+/* body {
+    height: 190vh;
+} */
+
+h1 {
+    font-family: 'Chicle', cursive;
+    color: #97C953;
+    font-size: 4em;
+    text-align: center;
+    justify-self: center;
+    margin-top: 50px;
+    text-decoration: underline solid #97C953;
+}
