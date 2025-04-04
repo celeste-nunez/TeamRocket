@@ -2,10 +2,14 @@
   "name": "my-react",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://celeste-nunez.github.io/react-gh-pages",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
     "dev": "vite",
-    "build": "vite build",
+    "build": "react scripts build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
