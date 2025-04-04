@@ -14,8 +14,6 @@ import AboutUs from './AboutUs';
 //App returns the Router->Routes->Route for the different pages of our site, defined through the imports
 function App() {
   return (
- 
-
   <>
     <Router>
       <Routes>
@@ -25,7 +23,6 @@ function App() {
       </Routes>
     </Router>
   </>
-
   );
 }
 
