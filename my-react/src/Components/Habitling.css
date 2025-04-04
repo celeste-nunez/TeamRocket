@@ -10,6 +10,10 @@
   --accent-color3: #F6FBE2;
 }
 
+body {
+  height: 120vh;
+}
+
 .habit-container {
   display: flex;
   flex-wrap: wrap;
