@@ -26,18 +26,6 @@ function App() {
         </Routes>
       </Router>
     </>
- 
-
-  <>
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/Habitling" element={<Habitling />} />
-        <Route path="/AboutUs" element={<AboutUs />} />
-      </Routes>
-    </Router>
-  </>
-
   );
 }
 
