@@ -42,7 +42,7 @@ function AboutUs() {
                 <Card
                     profile_picture={holdenImage}
                     name="Holden Turman"
-                    description="Team Lead | React | Javascript | Habtiling Card"
+                    description="Team Lead | React | Javascript | Web Developer"
                     githubLink="https://github.com/HoldenTurman"
                     linkedinLink="https://www.linkedin.com/in/holdenturman/"
                 />
@@ -56,7 +56,7 @@ function AboutUs() {
                 <Card
                     profile_picture={isaiahImage}
                     name="Isaiah Carrin"
-                    description="Project Manager | Firebase | React | JavaScript | Css Animations"
+                    description="Project Manager | Firebase | React | JavaScript | Css Animator"
                     githubLink="https://github.com/iCarrin"
                     linkedinLink="http://www.linkden.com/in/isaiah-carrin"
                 />
